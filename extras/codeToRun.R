@@ -73,9 +73,11 @@ tablePrefix <- ""
 # minimum counts that can be displayed according to data governance
 minimumCounts <- 5
 
-runStudy(conn,
-         cdmDatabaseSchema,
-         resultsDatabaseSchema,
-         dbName,
-         tablePrefix,
-         minimumCounts)
+instantiateCohorts <- TRUE
+runDiagnostics <- FALSE
+
+runStudy(connectionDetails, 
+         cohortTable, 
+         cdmDatabaseSchema, 
+         cohortDatabaseSchema,
+         instantiateCohorts)
