@@ -1,4 +1,4 @@
-Package: Characterisation of patients with Alopecia 
+Package: EhdenAlopecia 
 Version: 0.1
 Authors@R: person("Ross", "Williams", , "r.williams@derasmusmc.nl", role = c("aut", "cre"))
 Description: This package creates the cohorts for this EHDEN Alopecia study study. Based on this cohort diagnostics, incidence and prevalence rates and treatment patterns are analysis are performed.
@@ -9,7 +9,6 @@ RoxygenNote: 7.2.3
 Depends:
     R (>= 3.6.1)
 Imports:
-    CDMConnector (>= 1.1.0),
     DBI,
     dplyr,
     glue,
