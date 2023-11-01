@@ -1,8 +1,26 @@
-runStudy <- function(connectionDetails, 
+#' run the main elements of the study
+#'
+#' @param connectionDetails connection details generated using DatabaseConnector::createConnectionDetails()
+#' @param cohortTable Name of the table to be created where cohorts will be stored
+#' @param cdmDatabaseSchema name of the schema where the cdm is stored
+#' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
+#' @param instantiateCohorts choose whether to instantiate the cohorts on your database
+#' @param runDiagnostics choose whether to run the cohort diagnostics 
+#' @param outputFolder The folder where the results should be written
+#' @param databaseId a short name that can identify the database used
+#' @param minCellCount the minimum number of patients that can be shared for any single count in the results
+#'
+#' @export
+
+runStudy <- function(connectionDetails,
                      cohortTable, 
                      cdmDatabaseSchema, 
                      cohortDatabaseSchema,
-                     instantiateCohorts) {
+                     instantiateCohorts = FALSE,
+                     runDiagnostics = FALSE,
+                     outputFolder,
+                     databaseId,
+                     minCellCount) {
   
   if (instantiateCohorts){
     createCohorts(connectionDetails = connectionDetails, 
@@ -12,19 +30,15 @@ runStudy <- function(connectionDetails,
   }
   
   if (runDiagnostics){
-    executeDiagnostics(cohortDefinitionSet,
+    cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet_Alopecia_20231018.csv")
+    CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet,
                        connectionDetails = connectionDetails,
                        cohortTable = cohortTable,
                        cohortDatabaseSchema = cohortDatabaseSchema,
                        cdmDatabaseSchema = cdmDatabaseSchema,
-                       exportFolder = exportFolder,
-                       databaseId = "MyCdm",
-                       minCellCount = 5
-    )
-    CohortGenerator::dropCohortStatsTables(
-      connectionDetails = connectionDetails,
-      cohortDatabaseSchema = cohortDatabaseSchema,
-      cohortTableNames = cohortTableNames
+                       exportFolder = outputFolder,
+                       databaseId = databaseId,
+                       minCellCount = minCellCount
     )
   }
 }

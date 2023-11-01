@@ -17,13 +17,13 @@
 #
 # 1. See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
 #
-# 2. In RStudio, create a new project by cloning https://github.com/darwin-eu-studies/P1C3001AsthmaBackgroundRates
-#
+# 2. In RStudio, create a new project by cloning
+# 
 # 3. Install renv package
-install.packages("renv")
-#
-# 4. Build the local library. This may take a while:
-renv::restore()
+# install.packages("renv")
+# #
+# # 4. Build the local library. This may take a while:
+# renv::restore()
 #
 # 5. Build the R package in the Build menu  -> Install
 
@@ -33,51 +33,64 @@ renv::restore()
 #
 # Edit the variables below to the correct values for your environment:
 
+#Load the library
 
-# library(testthat)
-
+library(EhdenAlopecia)
 # database metadata and connection details -----
 # The name/ acronym for the database
-# IMPORTANT: to use names CPRD, IMASIS, IPCI, IQVIA_GERMANY_DA, SIDIAP for these databases.
-dbName <- " "
+databaseId = ""
 
 # Database connection details -----
-# In this study we also use the DBI package to connect to the database
-# set up the dbConnect details below (see https://dbi.r-dbi.org/articles/dbi for
-# more details)
-# you may need to install another package for this
-# eg for postgres
-# conn <- dbConnect(
-#   RPostgres::Postgres(),
-#   dbname = server_dbi,
-#   port = port,
-#   host = host,
-#   user = user,
-#   password = password
-# )
-conn <- DBI::dbConnect("....")
+#connection details
+#User specified input
 
-# The name of the schema that contains the OMOP CDM with patient-level data
-cdmDatabaseSchema <- "...."
 
-# The name of the schema where results tables will be created
-resultsDatabaseSchema <- "...."
+# Details for connecting to the server:
+dbms <- ""
+user <- ''
+pw <- ''
+server <- ""
+port <- ''
+
+connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
+                                                                server = server,
+                                                                user = user,
+                                                                password = pw,
+                                                                port = port)
+
+
+cdmDatabaseSchema = ""
+cohortDatabaseSchema = ""
+
 
 # Name of table prefix to use in the result schema for tables created during the study.
 # Notes:
 # - if there is an existing table in your results schema with the same names it
 #   will be overwritten
 # - name must be lower case
-tablePrefix <- ""
+cohortTable = "alopecia_ehden"
+
 
 # minimum counts that can be displayed according to data governance
-minimumCounts <- 5
+minCellCount <- 5
 
+#specify where to save the results
+outputFolder = "Results"
+
+
+#choose analysis to run
 instantiateCohorts <- TRUE
-runDiagnostics <- FALSE
+runDiagnostics <- TRUE
 
-runStudy(connectionDetails, 
-         cohortTable, 
-         cdmDatabaseSchema, 
-         cohortDatabaseSchema,
-         instantiateCohorts)
+
+### Do not edit below here
+
+runStudy(connectionDetails = connectionDetails, 
+         cohortTable = cohortTable, 
+         cdmDatabaseSchema = cdmDatabaseSchema, 
+         cohortDatabaseSchema = cohortDatabaseSchema,
+         instantiateCohorts = instantiateCohorts,
+         runDiagnostics = runDiagnostics,
+         outputFolder = outputFolder,
+         databaseId = databaseId,
+         minCellCount = minCellCount)

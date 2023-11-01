@@ -18,7 +18,8 @@ Imports:
     duckdb,
     log4r,
     lubridate,
-    rlang
+    rlang,
+    readr
 Suggests: 
     testthat (>= 3.0.0),
     rmarkdown,
