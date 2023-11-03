@@ -38,7 +38,7 @@
 library(EhdenAlopecia)
 # database metadata and connection details -----
 # The name/ acronym for the database
-databaseId = ""
+databaseId <- ""
 
 # Database connection details -----
 #connection details
@@ -59,8 +59,8 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
                                                                 port = port)
 
 
-cdmDatabaseSchema = ""
-cohortDatabaseSchema = ""
+cdmDatabaseSchema <- ""
+cohortDatabaseSchema <- ""
 
 
 # Name of table prefix to use in the result schema for tables created during the study.
@@ -68,14 +68,14 @@ cohortDatabaseSchema = ""
 # - if there is an existing table in your results schema with the same names it
 #   will be overwritten
 # - name must be lower case
-cohortTable = "alopecia_ehden"
+cohortTable <- "alopecia_ehden"
 
 
 # minimum counts that can be displayed according to data governance
 minCellCount <- 5
 
 #specify where to save the results
-outputFolder = "Results"
+outputFolder <- "results"
 
 
 #choose analysis to run
@@ -85,12 +85,14 @@ runDiagnostics <- TRUE
 
 ### Do not edit below here
 
-runStudy(connectionDetails = connectionDetails, 
-         cohortTable = cohortTable, 
-         cdmDatabaseSchema = cdmDatabaseSchema, 
-         cohortDatabaseSchema = cohortDatabaseSchema,
-         instantiateCohorts = instantiateCohorts,
-         runDiagnostics = runDiagnostics,
-         outputFolder = outputFolder,
-         databaseId = databaseId,
-         minCellCount = minCellCount)
+EhdenAlopecia::runStudy(
+  connectionDetails = connectionDetails, 
+  cohortTable = cohortTable, 
+  cdmDatabaseSchema = cdmDatabaseSchema, 
+  cohortDatabaseSchema = cohortDatabaseSchema,
+  instantiateCohorts = instantiateCohorts,
+  runDiagnostics = runDiagnostics,
+  outputFolder = outputFolder,
+  databaseId = databaseId,
+  minCellCount = minCellCount
+)
