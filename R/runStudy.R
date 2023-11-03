@@ -30,7 +30,7 @@ runStudy <- function(connectionDetails,
   }
   
   if (runDiagnostics){
-    cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet_Alopecia_20231018.csv")
+    cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet.csv")
     CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet,
                        connectionDetails = connectionDetails,
                        cohortTable = cohortTable,

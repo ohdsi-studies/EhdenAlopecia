@@ -1,5 +1,5 @@
-cohortId,cohortName,sql,json,logicDescription
-92,"(Alopecia) Cohort 1 - Alopecia Areata, criteria i-iii","CREATE TABLE #Codesets (
+"","atlasId","cohortId","cohortName","sql","json","logicDescription","generateStats"
+"1",92,92,"(Alopecia) Cohort 1 - Alopecia Areata, criteria i-iii","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -315,8 +315,8 @@ DROP TABLE #Codesets;
 }","Patients with alopecia areata:
   i. Have a record of a first diagnosis on or after 1 Jan 2015 AND
  ii. Have no record of a diagnosis at any time point prior to index date
-iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND"
-93,"(Alopecia) Cohort 2 - Alopecia Totalis or Universalis, criteria i-iii","CREATE TABLE #Codesets (
+iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND",FALSE
+"2",93,93,"(Alopecia) Cohort 2 - Alopecia Totalis or Universalis, criteria i-iii","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -593,8 +593,8 @@ DROP TABLE #Codesets;
   i. Have a record of a first diagnosis on or after 1 Jan 2015 AND
  ii. Have no record of a diagnosis at any time point prior to index date
 iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded
-Note: does not check for earlier AT/AU/AA."
-94,"(Alopecia) Cohort 3 - Alopecia Areata non-AT or AU,  i-iii","CREATE TABLE #Codesets (
+Note: does not check for earlier AT/AU/AA.",FALSE
+"3",94,94,"(Alopecia) Cohort 3 - Alopecia Areata non-AT or AU,  i-iii","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -1130,8 +1130,8 @@ DROP TABLE #Codesets;
 }","Patients with non-AT/AU identified based on codes ‘alopecia areata’ or ‘alopecia unspecified’ but no AT or AU codes during the follow-up period.
   i. Have a record of a first diagnosis on or after 1 Jan 2015 AND
  ii. Have no record of a diagnosis at any time point prior to index date
-iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND"
-95,"(Alopecia) Cohort 1 - Alopecia Areata, criteria i-v","CREATE TABLE #Codesets (
+iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND",FALSE
+"4",95,95,"(Alopecia) Cohort 1 - Alopecia Areata, criteria i-v","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -1157,11 +1157,11 @@ WHERE E.concept_id is null
 ) C UNION ALL 
 SELECT 1 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
   and c.invalid_reason is null
 
 ) I
@@ -1896,23 +1896,6 @@ DROP TABLE #Codesets;
 					},
 					{
 						""concept"" : {
-							""CONCEPT_ID"" : 4031164,
-							""CONCEPT_NAME"" : ""Non-scarring alopecia"",
-							""STANDARD_CONCEPT"" : ""S"",
-							""STANDARD_CONCEPT_CAPTION"" : ""Standard"",
-							""INVALID_REASON"" : ""V"",
-							""INVALID_REASON_CAPTION"" : ""Valid"",
-							""CONCEPT_CODE"" : ""238725004"",
-							""DOMAIN_ID"" : ""Condition"",
-							""VOCABULARY_ID"" : ""SNOMED"",
-							""CONCEPT_CLASS_ID"" : ""Clinical Finding""
-						},
-						""isExcluded"" : false,
-						""includeDescendants"" : true,
-						""includeMapped"" : false
-					},
-					{
-						""concept"" : {
 							""CONCEPT_ID"" : 35622259,
 							""CONCEPT_NAME"" : ""Satoyoshi syndrome"",
 							""STANDARD_CONCEPT"" : ""S"",
@@ -2299,8 +2282,8 @@ DROP TABLE #Codesets;
  ii. Have no record of a diagnosis at any time point prior to index date
 iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND
 iv. Have a minimum of two respective diagnoses in the entire follow-up period, at least 30 days apart, to rule out a misdiagnosis (e.g. hair loss associated with chemotherapy) AND
-v. In the two years subsequent to the index date, have no occurrence of an alternative diagnosis or specified treatment"
-96,"(Alopecia) Cohort 2 - Alopecia Totalis or Universalis, criteria i-v","CREATE TABLE #Codesets (
+v. In the two years subsequent to the index date, have no occurrence of an alternative diagnosis or specified treatment",FALSE
+"5",96,96,"(Alopecia) Cohort 2 - Alopecia Totalis or Universalis, criteria i-v","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -2320,11 +2303,11 @@ UNION  select c.concept_id
 ) C UNION ALL 
 SELECT 4 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
   and c.invalid_reason is null
 
 ) I
@@ -3025,23 +3008,6 @@ DROP TABLE #Codesets;
 					},
 					{
 						""concept"" : {
-							""CONCEPT_ID"" : 4031164,
-							""CONCEPT_NAME"" : ""Non-scarring alopecia"",
-							""STANDARD_CONCEPT"" : ""S"",
-							""STANDARD_CONCEPT_CAPTION"" : ""Standard"",
-							""INVALID_REASON"" : ""V"",
-							""INVALID_REASON_CAPTION"" : ""Valid"",
-							""CONCEPT_CODE"" : ""238725004"",
-							""DOMAIN_ID"" : ""Condition"",
-							""VOCABULARY_ID"" : ""SNOMED"",
-							""CONCEPT_CLASS_ID"" : ""Clinical Finding""
-						},
-						""isExcluded"" : false,
-						""includeDescendants"" : true,
-						""includeMapped"" : false
-					},
-					{
-						""concept"" : {
 							""CONCEPT_ID"" : 35622259,
 							""CONCEPT_NAME"" : ""Satoyoshi syndrome"",
 							""STANDARD_CONCEPT"" : ""S"",
@@ -3429,8 +3395,8 @@ DROP TABLE #Codesets;
 iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded
 iv. Have a minimum of two respective diagnoses in the entire follow-up period, at least 30 days apart, to rule out a misdiagnosis (e.g. hair loss associated with chemotherapy) AND
 v. In the two years subsequent to the index date, have no occurrence of an alternative diagnosis or specified treatment
-Note: does not check for earlier AT/AU/AA."
-97,"(Alopecia) Cohort 3 - Alopecia Areata non-AT or AU,  i-v","CREATE TABLE #Codesets (
+Note: does not check for earlier AT/AU/AA.",FALSE
+"6",97,97,"(Alopecia) Cohort 3 - Alopecia Areata non-AT or AU,  i-v","CREATE TABLE #Codesets (
   codeset_id int NOT NULL,
   concept_id bigint NOT NULL
 )
@@ -3445,11 +3411,11 @@ SELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ) C UNION ALL 
 SELECT 3 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,4031164,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
+  and ca.ancestor_concept_id in (4291286,4082365,36717706,4067168,37396390,4182398,4150045,4066852,4082356,4063460,4063457,37396320,4007459,4004847,4067082,4130165,4035150,4033634,140173,4062972,35622259,4291287,4063459,4185073,4250506,4067083,4105584,4065243,4065242,4285863,4046566,4066851,4067081,4099746,4194637,4266794,4274978)
   and c.invalid_reason is null
 
 ) I
@@ -4335,23 +4301,6 @@ DROP TABLE #Codesets;
 					},
 					{
 						""concept"" : {
-							""CONCEPT_ID"" : 4031164,
-							""CONCEPT_NAME"" : ""Non-scarring alopecia"",
-							""STANDARD_CONCEPT"" : ""S"",
-							""STANDARD_CONCEPT_CAPTION"" : ""Standard"",
-							""INVALID_REASON"" : ""V"",
-							""INVALID_REASON_CAPTION"" : ""Valid"",
-							""CONCEPT_CODE"" : ""238725004"",
-							""DOMAIN_ID"" : ""Condition"",
-							""VOCABULARY_ID"" : ""SNOMED"",
-							""CONCEPT_CLASS_ID"" : ""Clinical Finding""
-						},
-						""isExcluded"" : false,
-						""includeDescendants"" : true,
-						""includeMapped"" : false
-					},
-					{
-						""concept"" : {
 							""CONCEPT_ID"" : 35622259,
 							""CONCEPT_NAME"" : ""Satoyoshi syndrome"",
 							""STANDARD_CONCEPT"" : ""S"",
@@ -4817,4 +4766,4 @@ DROP TABLE #Codesets;
 iii. Have a baseline period of two years preceding the index date during which demographic and clinical characteristics can be recorded AND
 iv. Have a minimum of two respective diagnoses in the entire follow-up period, at least 30 days apart, to rule out a misdiagnosis (e.g. hair loss associated with chemotherapy) AND
 v. In the two years subsequent to the index date, have no occurrence of an alternative diagnosis or specified treatment
-"
+",FALSE
