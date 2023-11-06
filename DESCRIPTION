@@ -1,5 +1,5 @@
 Package: EhdenAlopecia 
-Version: 0.1
+Version: 1.0.0
 Authors@R: person("Ross", "Williams", , "r.williams@derasmusmc.nl", role = c("aut", "cre"))
 Description: This package creates the cohorts for this EHDEN Alopecia study study. Based on this cohort diagnostics, incidence and prevalence rates and treatment patterns are analysis are performed.
 License: Apache License (>= 2)
@@ -15,7 +15,6 @@ Imports:
     zip,
     magrittr,
     checkmate,
-    duckdb,
     log4r,
     lubridate,
     rlang,
@@ -23,5 +22,6 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0),
     rmarkdown,
-    checkmate
+    checkmate,
+    duckdb,
 Config/testthat/edition: 3
