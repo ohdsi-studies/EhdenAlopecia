@@ -17,7 +17,7 @@
 #
 # 1. See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
 #
-# 2. In RStudio, create a new project by cloning
+# 2. In RStudio, create a new project by cloning this package
 # 
 # 3. Install renv package
 # install.packages("renv")
