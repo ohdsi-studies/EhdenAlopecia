@@ -15,17 +15,16 @@
 # SECTION 1: Installing
 # *******************************************************
 #
-# 1. See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
-#
-# 2. In RStudio, create a new project by cloning this package
-# 
-# 3. Install renv package
-# install.packages("renv")
-#
-# 4. Build the local library. This may take a while:
-# renv::restore()
-#
-# 5. Build the R package in the Build menu  -> Install
+# See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
+# Follow these instructions for setting up your R environment, including RTools and Java.
+
+# Clone the EhdenAlopecia package into your local R environment.
+
+# Open your study package in RStudio. Use the following code to install all the dependencies:
+
+# In RStudio, select 'Build' then 'Install and Restart' to install the package.
+
+# After succesfully installing the package, run the following code
 
 # *******************************************************
 # SECTION 2: Running the package -------------------------------------------------------------------------------
