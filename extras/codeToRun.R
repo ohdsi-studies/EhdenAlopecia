@@ -21,8 +21,8 @@
 # 
 # 3. Install renv package
 # install.packages("renv")
-# #
-# # 4. Build the local library. This may take a while:
+#
+# 4. Build the local library. This may take a while:
 # renv::restore()
 #
 # 5. Build the R package in the Build menu  -> Install
@@ -47,10 +47,10 @@ databaseId <- ""
 
 # Details for connecting to the server:
 dbms <- ""
-user <- ''
-pw <- ''
+user <- ""
+pw <- ""
 server <- ""
-port <- ''
+port <- ""
 
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
                                                                 server = server,
