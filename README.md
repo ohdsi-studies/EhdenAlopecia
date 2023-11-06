@@ -50,10 +50,10 @@ databaseId <- ""
 
 # Details for connecting to the server:
 dbms <- ""
-user <- ''
-pw <- ''
+user <- ""
+pw <- ""
 server <- ""
-port <- ''
+port <- ""
 
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
                                                                 server = server,
