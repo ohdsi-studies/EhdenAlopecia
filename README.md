@@ -1,4 +1,4 @@
-# Ehden Alopecia
+# EHDEN Alopecia
 
 Analytic software to perform large-scale distributed analysis of patients with Alopecia as part of the EHDEN study-athon
 
