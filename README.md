@@ -27,7 +27,7 @@ Java
 # How to run
 Follow these instructions for setting up your R environment, including RTools and Java.
 
-Clone the Ehdenaloopecia package into your local R environment.
+Clone the EhdenAlopecia package into your local R environment.
 
 Open your study package in RStudio. Use the following code to install all the dependencies:
 
