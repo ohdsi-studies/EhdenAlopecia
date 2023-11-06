@@ -4,9 +4,8 @@
 #' @param cohortTable Name of the table to be created where cohorts will be stored
 #' @param cdmDatabaseSchema name of the schema where the cdm is stored
 #' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
-#' @return 
 #'
-#' @examples
+#' @export
 createCohorts <- function(connectionDetails, 
                           cohortTable, 
                           cdmDatabaseSchema, 
@@ -29,7 +28,7 @@ createCohorts <- function(connectionDetails,
   cohortJson <- readChar(cohortJsonFileName, file.info(cohortJsonFileName)$size)
   cohortExpression <- CirceR::cohortExpressionFromJson(cohortJson)
   cohortSql <- CirceR::buildCohortQuery(cohortExpression, options = CirceR::createGenerateOptions(generateStats = FALSE))
-  cohortsToCreate <- rbind(cohortsToCreate, data.frame(cohortId = i,
+  cohortsToCreate <- rbind(cohortsToCreate, data.frame(cohortId = 91+i,
                                                        cohortName = cohortName, 
                                                        sql = cohortSql,
                                                        stringsAsFactors = FALSE))
@@ -54,4 +53,5 @@ createCohorts <- function(connectionDetails,
                                                  cohortDatabaseSchema = cohortDatabaseSchema,
                                                  cohortTable = cohortTableNames$cohortTable)
   print(cohortCounts)
+  return(cohortsGenerated)
 }
