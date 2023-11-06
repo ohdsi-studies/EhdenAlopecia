@@ -1,0 +1,802 @@
+{
+	"ConceptSets": [
+	  {
+		"id": 3,
+		"name": "(Alopecia) AT+AU",
+		"expression": {
+		  "items": [
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "86166000",
+				"CONCEPT_ID": 4312756,
+				"CONCEPT_NAME": "Alopecia universalis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  }
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "19754005",
+				"CONCEPT_ID": 4056343,
+				"CONCEPT_NAME": "Alopecia totalis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			}
+		  ]
+		}
+	  },
+	  {
+		"id": 4,
+		"name": "(Alopecia) Exclusion - optimised",
+		"expression": {
+		  "items": [
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "402637002",
+				"CONCEPT_ID": 4291286,
+				"CONCEPT_NAME": "Alopecia due to disturbance of hair cycle",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "239050000",
+				"CONCEPT_ID": 4082365,
+				"CONCEPT_NAME": "Alopecia, nail dystrophy, ophthalmic complications, thyroid dysfunction, hypohidrosis, ephelides, enteropathy and respiratory tract infections",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "719275009",
+				"CONCEPT_ID": 36717706,
+				"CONCEPT_NAME": "Primary hypergonadotropic hypogonadism and partial alopecia syndrome",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201144006",
+				"CONCEPT_ID": 4067168,
+				"CONCEPT_NAME": "Alopecia hereditaria",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "716191002",
+				"CONCEPT_ID": 37396390,
+				"CONCEPT_NAME": "Perniola Krajewska Carnevale syndrome",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "5441008",
+				"CONCEPT_ID": 4182398,
+				"CONCEPT_NAME": "Tinea capitis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "31082002",
+				"CONCEPT_ID": 4150045,
+				"CONCEPT_NAME": "Frostbite alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201139004",
+				"CONCEPT_ID": 4066852,
+				"CONCEPT_NAME": "Cachectic alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "239010003",
+				"CONCEPT_ID": 4082356,
+				"CONCEPT_NAME": "Alopecia, onychodysplasia, hypohidrosis, deafness ectodermal dysplasia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201141003",
+				"CONCEPT_ID": 4063460,
+				"CONCEPT_NAME": "Alopecia neurotica",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201132008",
+				"CONCEPT_ID": 4063457,
+				"CONCEPT_NAME": "Frontal alopecia of women",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "716088000",
+				"CONCEPT_ID": 37396320,
+				"CONCEPT_NAME": "Follicular hamartoma with alopecia and cystic fibrosis syndrome",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "111024006",
+				"CONCEPT_ID": 4007459,
+				"CONCEPT_NAME": "Alopecia liminaris frontalis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "1108009",
+				"CONCEPT_ID": 4004847,
+				"CONCEPT_NAME": "Female pattern alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201140002",
+				"CONCEPT_ID": 4067082,
+				"CONCEPT_NAME": "Alopecia follicularis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "237616002",
+				"CONCEPT_ID": 4130165,
+				"CONCEPT_NAME": "Hypogonadism, diabetes mellitus, alopecia, mental retardation and electrocardiographic abnormalities",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "237895001",
+				"CONCEPT_ID": 4035150,
+				"CONCEPT_NAME": "Vitamin D-dependent rickets type II without alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "239019002",
+				"CONCEPT_ID": 4033634,
+				"CONCEPT_NAME": "Odonto-onychial dysplasia with alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "39479004",
+				"CONCEPT_ID": 140173,
+				"CONCEPT_NAME": "Telogen effluvium",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "17155009",
+				"CONCEPT_ID": 4062972,
+				"CONCEPT_NAME": "Trichotillomania",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "763630007",
+				"CONCEPT_ID": 35622259,
+				"CONCEPT_NAME": "Satoyoshi syndrome",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "402639004",
+				"CONCEPT_ID": 4291287,
+				"CONCEPT_NAME": "Alopecia due to friction and trauma",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201135005",
+				"CONCEPT_ID": 4063459,
+				"CONCEPT_NAME": "Alopecia senilis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "54539003",
+				"CONCEPT_ID": 4185073,
+				"CONCEPT_NAME": "Endocrine alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "73383004",
+				"CONCEPT_ID": 4250506,
+				"CONCEPT_NAME": "Drug-related alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201142005",
+				"CONCEPT_ID": 4067083,
+				"CONCEPT_NAME": "Peroneal alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "2965006",
+				"CONCEPT_ID": 4105584,
+				"CONCEPT_NAME": "Congenital alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201138007",
+				"CONCEPT_ID": 4065243,
+				"CONCEPT_NAME": "Diffuse alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201137002",
+				"CONCEPT_ID": 4065242,
+				"CONCEPT_NAME": "Alopecia localis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "67488005",
+				"CONCEPT_ID": 4285863,
+				"CONCEPT_NAME": "Traumatic alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "22934003",
+				"CONCEPT_ID": 4046566,
+				"CONCEPT_NAME": "Radiation alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201133003",
+				"CONCEPT_ID": 4066851,
+				"CONCEPT_NAME": "Premature alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "201136006",
+				"CONCEPT_ID": 4067081,
+				"CONCEPT_NAME": "Alopecia febrilis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "27382006",
+				"CONCEPT_ID": 4099746,
+				"CONCEPT_NAME": "Alopecia mucinosa",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "67772009",
+				"CONCEPT_ID": 4194637,
+				"CONCEPT_NAME": "Thermal burn alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "400088006",
+				"CONCEPT_ID": 4266794,
+				"CONCEPT_NAME": "Scarring alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "65130004",
+				"CONCEPT_ID": 4274978,
+				"CONCEPT_NAME": "Nutritional alopecia",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			}
+		  ]
+		}
+	  },
+	  {
+		"id": 5,
+		"name": "(Alopecia) AT+AU+AA",
+		"expression": {
+		  "items": [
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "68225006",
+				"CONCEPT_ID": 141933,
+				"CONCEPT_NAME": "Alopecia areata",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "86166000",
+				"CONCEPT_ID": 4312756,
+				"CONCEPT_NAME": "Alopecia universalis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "19754005",
+				"CONCEPT_ID": 4056343,
+				"CONCEPT_NAME": "Alopecia totalis",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "includeDescendants": true
+			},
+			{
+			  "concept": {
+				"CONCEPT_CLASS_ID": "Clinical Finding",
+				"CONCEPT_CODE": "720980004",
+				"CONCEPT_ID": 36715349,
+				"CONCEPT_NAME": "Alopecia, psychomotor epilepsy, periodontal pyorrhea, intellectual disability syndrome",
+				"DOMAIN_ID": "Condition",
+				"INVALID_REASON": "V",
+				"INVALID_REASON_CAPTION": "Valid",
+				"STANDARD_CONCEPT": "S",
+				"STANDARD_CONCEPT_CAPTION": "Standard",
+				"VOCABULARY_ID": "SNOMED"
+			  },
+			  "isExcluded": true
+			}
+		  ]
+		}
+	  }
+	],
+	"PrimaryCriteria": {
+	  "CriteriaList": [
+		{
+		  "ConditionOccurrence": {
+			"CodesetId": 3,
+			"OccurrenceStartDate": {
+			  "Value": "2015-01-01",
+			  "Extent": "2022-12-31",
+			  "Op": "bt"
+			},
+			"First": true
+		  }
+		}
+	  ],
+	  "ObservationWindow": {
+		"PriorDays": 730,
+		"PostDays": 0
+	  },
+	  "PrimaryCriteriaLimit": {
+		"Type": "First"
+	  }
+	},
+	"QualifiedLimit": {
+	  "Type": "First"
+	},
+	"ExpressionLimit": {
+	  "Type": "First"
+	},
+	"InclusionRules": [
+	  {
+		"name": "iv. Repeated diagnosis",
+		"description": "Have a minimum of two respective diagnoses in the entire follow-up period, at least 30 days apart, to rule out a misdiagnosis (e.g. hair loss associated with chemotherapy)",
+		"expression": {
+		  "Type": "ALL",
+		  "CriteriaList": [
+			{
+			  "Criteria": {
+				"ConditionOccurrence": {
+				  "CorrelatedCriteria": {
+					"Type": "ALL",
+					"CriteriaList": [
+					  {
+						"Criteria": {
+						  "ConditionOccurrence": {
+							"CodesetId": 5
+						  }
+						},
+						"StartWindow": {
+						  "Start": {
+							"Days": 30,
+							"Coeff": 1
+						  },
+						  "End": {
+							"Coeff": 1
+						  },
+						  "UseEventEnd": false
+						},
+						"Occurrence": {
+						  "Type": 2,
+						  "Count": 1
+						}
+					  }
+					],
+					"DemographicCriteriaList": [],
+					"Groups": []
+				  },
+				  "CodesetId": 5
+				}
+			  },
+			  "StartWindow": {
+				"Start": {
+				  "Coeff": -1
+				},
+				"End": {
+				  "Days": 2920,
+				  "Coeff": 1
+				},
+				"UseEventEnd": false
+			  },
+			  "Occurrence": {
+				"Type": 2,
+				"Count": 1
+			  }
+			}
+		  ],
+		  "DemographicCriteriaList": [],
+		  "Groups": []
+		}
+	  },
+	  {
+		"name": "v. No alternative diagnoses",
+		"description": "In the two years subsequent to the index date, have no occurrence of an alternative diagnosis or specified treatment",
+		"expression": {
+		  "Type": "ALL",
+		  "CriteriaList": [
+			{
+			  "Criteria": {
+				"ConditionOccurrence": {
+				  "CodesetId": 4
+				}
+			  },
+			  "StartWindow": {
+				"Start": {
+				  "Days": 0,
+				  "Coeff": -1
+				},
+				"End": {
+				  "Days": 730,
+				  "Coeff": 1
+				},
+				"UseEventEnd": false
+			  },
+			  "Occurrence": {
+				"Type": 0,
+				"Count": 0
+			  }
+			}
+		  ],
+		  "DemographicCriteriaList": [],
+		  "Groups": []
+		}
+	  }
+	],
+	"CensoringCriteria": [],
+	"CollapseSettings": {
+	  "CollapseType": "ERA",
+	  "EraPad": 0
+	},
+	"CensorWindow": {},
+	"cdmVersionRange": ">=5.0.0"
+  }
