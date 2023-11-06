@@ -35,7 +35,7 @@ In RStudio, select 'Build' then 'Install and Restart' to install the  package.
 
 After succesfully installing the package. Open the extras/codeTorun.R and run the following code
 
-```
+```R
 #Load the library
 
 library(EhdenAlopecia)
