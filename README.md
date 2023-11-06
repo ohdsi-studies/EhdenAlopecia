@@ -25,7 +25,7 @@ Java
 100 GB of free disk space
 
 # How to run
-Follow these instructions for setting up your R environment, including RTools and Java.
+See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
 
 Clone the EhdenAlopecia package into your local R environment.
 
