@@ -14,7 +14,8 @@ Analytic software to perform large-scale distributed analysis of patients with A
 - Protocol: To be added
 - Publications: -
 - Results explorer: -
-- Requirements
+
+# Requirements
 
 
 A database in Common Data Model version 5 in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, Google BigQuery, or Microsoft APS.
