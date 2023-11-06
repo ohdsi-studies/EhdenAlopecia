@@ -23,7 +23,8 @@ R version 4.0.5
 On Windows: RTools
 Java
 100 GB of free disk space
-How to run
+
+# How to run
 Follow these instructions for setting up your R environment, including RTools and Java.
 
 Clone the Ehdenaloopecia package into your local R environment.
