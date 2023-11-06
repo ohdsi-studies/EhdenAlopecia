@@ -30,6 +30,19 @@ See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configurin
 Clone the EhdenAlopecia package into your local R environment.
 
 Open your study package in RStudio. Use the following code to install all the dependencies:
+```R
+install.packages(c("DBI",
+    "dplyr",
+    "glue",
+    "zip",
+    "magrittr",
+    "checkmate",
+    "log4r",
+    "lubridate",
+    "rlang",
+    "readr")
+)
+```
 
 In RStudio, select 'Build' then 'Install and Restart' to install the  package.
 
