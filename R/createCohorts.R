@@ -28,7 +28,7 @@ createCohorts <- function(connectionDetails,
   cohortJson <- readChar(cohortJsonFileName, file.info(cohortJsonFileName)$size)
   cohortExpression <- CirceR::cohortExpressionFromJson(cohortJson)
   cohortSql <- CirceR::buildCohortQuery(cohortExpression, options = CirceR::createGenerateOptions(generateStats = FALSE))
-  cohortsToCreate <- rbind(cohortsToCreate, data.frame(cohortId = 91+i,
+  cohortsToCreate <- rbind(cohortsToCreate, data.frame(cohortId = as.numeric(cohortName),
                                                        cohortName = cohortName, 
                                                        sql = cohortSql,
                                                        stringsAsFactors = FALSE))
