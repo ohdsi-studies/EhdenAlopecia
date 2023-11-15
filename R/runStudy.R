@@ -6,6 +6,7 @@
 #' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
 #' @param instantiateCohorts choose whether to instantiate the cohorts on your database
 #' @param runDiagnostics choose whether to run the cohort diagnostics 
+#' @param runPatternAnalysis choose whether to run the treatment patterns analysis
 #' @param outputFolder The folder where the results should be written
 #' @param databaseId a short name that can identify the database used
 #' @param minCellCount the minimum number of patients that can be shared for any single count in the results
@@ -18,6 +19,7 @@ runStudy <- function(connectionDetails,
                      cohortDatabaseSchema,
                      instantiateCohorts = FALSE,
                      runDiagnostics = FALSE,
+                     runPatternAnalysis = FALSE,
                      outputFolder,
                      databaseId,
                      minCellCount) {

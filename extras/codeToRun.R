@@ -80,7 +80,7 @@ outputFolder <- "results"
 #choose analysis to run
 instantiateCohorts <- TRUE
 runDiagnostics <- TRUE
-
+runPatternAnalysis <- TRUE
 
 ### Do not edit below here
 
@@ -91,6 +91,7 @@ EhdenAlopecia::runStudy(
   cohortDatabaseSchema = cohortDatabaseSchema,
   instantiateCohorts = instantiateCohorts,
   runDiagnostics = runDiagnostics,
+  runPatternAnalysis = runPatternAnalysis,
   outputFolder = outputFolder,
   databaseId = databaseId,
   minCellCount = minCellCount
