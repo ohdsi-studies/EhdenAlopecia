@@ -52,6 +52,5 @@ createCohorts <- function(connectionDetails,
   cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
                                                  cohortDatabaseSchema = cohortDatabaseSchema,
                                                  cohortTable = cohortTableNames$cohortTable)
-  print(cohortCounts)
   return(cohortsGenerated)
 }
