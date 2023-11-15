@@ -4,7 +4,7 @@
 #' @param cdmDatabaseSchema the schema where the cdm is located
 #' @param cohortDatabaseSchema  A writable location on the database. 
 #' @param cohortsGenerated A table contianing the output of the createCohorts function, detailing the cohorts that have been instatiated
-#' @param outputDir The output directory where the results should be saved
+#' @param outputFolder The output directory where the results should be saved
 #' @param tablePrefix table prefix
 #' @param outcomeTableName outcome cohort table name
 #' @param logger logger object
@@ -21,16 +21,15 @@ runTreatmentPatterns <- function(connectionDetails,
                                  cohortDatabaseSchema,
                                  cohortTable,
                                  cohortsGenerated,
-                                 outputDir,
+                                 outputFolder,
                                  tablePrefix = NULL,
-                                 outcomeTableName,
                                  logger = NULL,
                                  cohortIds,
                                  minCellCount = 5) {
   # med level treatment patterns -----
   cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
                                                    cohortDatabaseSchema = cohortDatabaseSchema,
-                                                   cohortTable = outcomeTableName)
+                                                   cohortTable = cohortTable)
   tpCohorts <- cohortsGenerated %>%
     dplyr::inner_join(cohortCounts,
                dplyr::join_by(cohortId)) %>%
@@ -56,7 +55,7 @@ runTreatmentPatterns <- function(connectionDetails,
     # Compute pathways
     pathways <- TreatmentPatterns::executeTreatmentPatterns(
       cohorts = cohorts,
-      cohortTableName = outcomeTableName,
+      cohortTableName = cohortTable,
       outputPath = outputFolder,
       connectionDetails = connectionDetails,
       cdmSchema = cdmDatabaseSchema,

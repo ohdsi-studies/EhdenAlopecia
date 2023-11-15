@@ -23,10 +23,11 @@ runStudy <- function(connectionDetails,
                      minCellCount) {
   
   if (instantiateCohorts){
-    createCohorts(connectionDetails = connectionDetails, 
+    cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
                   cohortTable = cohortTable, 
                   cdmDatabaseSchema = cdmDatabaseSchema, 
                   cohortDatabaseSchema = cohortDatabaseSchema)
+    readr::write_csv(cohortsGenerated, file.path(outputFolder, "cohortsGenerated.csv"))
   }
   
   if (runDiagnostics){
@@ -40,5 +41,21 @@ runStudy <- function(connectionDetails,
                        databaseId = databaseId,
                        minCellCount = minCellCount
     )
+  }
+  
+  if (runPatternAnalysis)
+    {
+    if (!instantiateCohorts)
+      {
+    cohortsGenerated  <- readr::read_csv("cohortsGenerated.csv")
+    }
+    runTreatmentPatterns(connectionDetails = connectionDetails, 
+                         cdmDatabaseSchema = cdmDatabaseSchema, 
+                         cohortDatabaseSchema = cohortDatabaseSchema, 
+                         cohortTable = cohortTable, 
+                         cohortsGenerated = cohortsGenerated, 
+                         outputFolder = outputFolder, 
+                         cohortIds = cohortIds, 
+                         minCellCount = minCellCount)
   }
 }
