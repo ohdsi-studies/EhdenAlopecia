@@ -1,0 +1,251 @@
+{
+	"cdmVersionRange" : ">=5.0.0",
+	"PrimaryCriteria" : {
+		"CriteriaList" : [
+			{
+				"DrugExposure" : {
+					"CodesetId" : 2,
+					"OccurrenceStartDate" : {
+						"Value" : "2015-01-01",
+						"Op" : "gte"
+					},
+					"DrugTypeExclude" : false
+				}
+			}
+		],
+		"ObservationWindow" : {
+			"PriorDays" : 0,
+			"PostDays" : 0
+		},
+		"PrimaryCriteriaLimit" : {
+			"Type" : "First"
+		}
+	},
+	"ConceptSets" : [
+		{
+			"id" : 2,
+			"name" : "(Alopecia) Immunotherapy, topical (all non-standard concepts)",
+			"expression" : {
+				"items" : [
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45017482,
+							"CONCEPT_NAME" : "DIPHENYLCYCLOPROPENONE 98% PWD",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "49452264202",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45274656,
+							"CONCEPT_NAME" : "DIPHENYLCYCLOPROPENONE POWDER",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "51927166800",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45052575,
+							"CONCEPT_NAME" : "DIPHENYLCYCLOPROPENONE PWDR",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "51552094302",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45257357,
+							"CONCEPT_NAME" : "DIPHENYLCYCLOPROPENONE PWDR",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "51552094301",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45239268,
+							"CONCEPT_NAME" : "2,4-DINITROCHLOROBENZENE CR",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "49452263001",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45187717,
+							"CONCEPT_NAME" : "2,4-DINITROCHLOROBENZENE CR",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "49452263002",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 4258736,
+							"CONCEPT_NAME" : "Dinitrochlorobenzene",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "N0000171188",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDFRT",
+							"CONCEPT_CLASS_ID" : "Chemical Structure"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 576880,
+							"CONCEPT_NAME" : "DINITROCHLOROBENZENE 100 % MISCELL CRYSTALS",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "060171",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "GCN_SEQNO",
+							"CONCEPT_CLASS_ID" : "GCN_SEQNO"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 45240352,
+							"CONCEPT_NAME" : "DINITROCHLOROBENZENE 99% CRYST",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "51927133000",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "NDC",
+							"CONCEPT_CLASS_ID" : "11-digit NDC"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 576954,
+							"CONCEPT_NAME" : "SQUARIC ACID DIBUTYLESTER 100 % MISCELL LIQUID (GRAM)",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "043710",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "GCN_SEQNO",
+							"CONCEPT_CLASS_ID" : "GCN_SEQNO"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 579748,
+							"CONCEPT_NAME" : "SQUARIC ACID DIBUTYLESTER IN BUTYL ALCOHOL 150 mg MISCELL LIQUID (GRAM)",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "070912",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "GCN_SEQNO",
+							"CONCEPT_CLASS_ID" : "GCN_SEQNO"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					},
+					{
+						"concept" : {
+							"CONCEPT_ID" : 574411,
+							"CONCEPT_NAME" : "SQUARIC ACID DIBUTYLESTER MISCELL POWDER (GRAM)",
+							"STANDARD_CONCEPT" : "N",
+							"STANDARD_CONCEPT_CAPTION" : "Non-Standard",
+							"INVALID_REASON" : "V",
+							"INVALID_REASON_CAPTION" : "Valid",
+							"CONCEPT_CODE" : "022515",
+							"DOMAIN_ID" : "Drug",
+							"VOCABULARY_ID" : "GCN_SEQNO",
+							"CONCEPT_CLASS_ID" : "GCN_SEQNO"
+						},
+						"isExcluded" : false,
+						"includeDescendants" : true,
+						"includeMapped" : false
+					}
+				]
+			}
+		}
+	],
+	"QualifiedLimit" : {
+		"Type" : "First"
+	},
+	"ExpressionLimit" : {
+		"Type" : "First"
+	},
+	"InclusionRules" : [],
+	"CensoringCriteria" : [],
+	"CollapseSettings" : {
+		"CollapseType" : "ERA",
+		"EraPad" : 0
+	},
+	"CensorWindow" : {}
+}

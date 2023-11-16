@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+errorReport*
+Results/*
+
+.DS_Store

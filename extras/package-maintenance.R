@@ -17,13 +17,25 @@ cohortDefinitionSet <- ROhdsiWebApi::exportCohortDefinitionSet(
 write.csv(cohortDefinitionSet, 'inst/cohortDefinitionSet.csv')
 
 # Insert cohort definitions from ATLAS into package -----------------------
-for (cohortId in 92:97) {
+for (cohortId in c(92:97, 100)) {
     ROhdsiWebApi::insertCohortDefinitionInPackage(
-    cohortId,
-    name = cohortId,
-    jsonFolder = "inst/cohorts",
-    sqlFolder = "inst/sql/sql_server",
-    baseUrl,
-    generateStats = FALSE
+        cohortId,
+        name = cohortId,
+        jsonFolder = "inst/cohorts",
+        sqlFolder = "inst/sql/sql_server",
+        baseUrl,
+        generateStats = FALSE
+    )
+}
+
+# Get treatment cohort definitions from Atlas ------------------------------
+for (cohortId in setdiff(101:127, 118)) {
+    ROhdsiWebApi::insertCohortDefinitionInPackage(
+        cohortId,
+        name = cohortId,
+        jsonFolder = "inst/treatment_cohorts",
+        sqlFolder = "inst/sql/sql_server",
+        baseUrl,
+        generateStats = FALSE
     )
 }
