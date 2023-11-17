@@ -62,12 +62,16 @@ runStudy <- function(connectionDetails,
       dplyr::bind_rows(treatmentCohortsGenerated)
     for (cohort in c(92, 93, 94, 95, 96 ,97, 100)){
       cohortIds <- c(cohort, 101:127) 
+      outputSubDir <- file.path(outputDir, 'treatmentPatterns', cohort)
+      if (!dir.exists(outputSubDir)) {
+        dir.create(outputSubDir, recursive = TRUE)
+      }
       runTreatmentPatterns(connectionDetails = connectionDetails, 
                          cdmDatabaseSchema = cdmDatabaseSchema, 
                          cohortDatabaseSchema = cohortDatabaseSchema, 
                          cohortTable = cohortTable, 
                          cohortsGenerated = cohortsGenerated, 
-                         outputFolder = outputFolder, 
+                         outputFolder = outputSubDir, 
                          cohortIds = cohortIds, 
                          minCellCount = minCellCount)
     }
