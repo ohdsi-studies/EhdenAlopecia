@@ -91,6 +91,7 @@
 	"InclusionRules" : [],
 	"EndStrategy" : {
 		"CustomEra" : {
+			"DrugCodesetId" : 15,
 			"GapDays" : 0,
 			"Offset" : 0
 		}
