@@ -30,12 +30,8 @@ for (cohortId in c(92:97, 100)) {
 
 # Get treatment cohort definitions from Atlas ------------------------------
 for (cohortId in setdiff(101:127, 118)) {
-    ROhdsiWebApi::insertCohortDefinitionInPackage(
-        cohortId,
-        name = cohortId,
-        jsonFolder = "inst/treatment_cohorts",
-        sqlFolder = "inst/sql/sql_server",
-        baseUrl,
-        generateStats = FALSE
-    )
+    print(cohortId)
+    object <- getCohortDefinition(cohortId = cohortId, baseUrl = baseUrl)
+    json <- ROhdsiWebApi:::.toJSON(object$expression, pretty = TRUE)
+    writeLines(json, file.path("inst", "treatment_cohorts", paste0(cohortId, ".json")))
 }

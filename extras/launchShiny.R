@@ -2,7 +2,7 @@ library(CohortDiagnostics)
 
 # -- Load results into database
 resultsPath <- "/Users/maxim/Documents/EHDEN-docs/AA Study-a-thon/results"
-pathToZips <- file.path(resultsPath, "fixed_zips")
+pathToZips <- file.path(resultsPath, "zips")
 sqliteDbPath <- file.path(pathToZips, "AACohortDiagnosticsResults.sqlite")
 createMergedResultsFile(pathToZips, sqliteDbPath = sqliteDbPath, overwrite = TRUE)
 
