@@ -9,7 +9,7 @@
 #' @export
 createCohorts <- function(connectionDetails, 
                           cohortTable,
-                          type = c("cohorts", "treatments"),
+                          type = c("cohorts"),
                           cdmDatabaseSchema, 
                           cohortDatabaseSchema){
   

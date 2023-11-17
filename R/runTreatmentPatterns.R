@@ -26,24 +26,24 @@ runTreatmentPatterns <- function(connectionDetails,
                                  logger = NULL,
                                  cohortIds,
                                  minCellCount = 5) {
-  # med level treatment patterns -----
-  cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
-                                                   cohortDatabaseSchema = cohortDatabaseSchema,
-                                                   cohortTable = cohortTable)
-  tpCohorts <- cohortsGenerated %>%
-    dplyr::inner_join(cohortCounts,
-               dplyr::join_by(cohortId)) %>%
-    dplyr::filter(cohortSubjects > 0) # make sure at least someone appears
+  # # med level treatment patterns -----
+  # cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
+  #                                                  cohortDatabaseSchema = cohortDatabaseSchema,
+  #                                                  cohortTable = cohortTable)
+  # tpCohorts <- cohortsGenerated %>%
+  #   dplyr::inner_join(cohortCounts,
+  #              dplyr::join_by(cohortId)) %>%
+  #   dplyr::filter(cohortSubjects > 0) # make sure at least someone appears
   
-  if (nrow(tpCohorts) > 0) {
+  # if (nrow(tpCohorts) > 0) {
     # Select target cohort
     targetCohorts <- cohortsGenerated %>%
-      filter(cohortName == cohortIds[1]) %>%
+      filter(cohortName == cohortIds[1]) %>%  
       select(cohortId, cohortName)
     
     # Select everything BUT target cohorts
     eventCohorts <- cohortsGenerated %>%
-      filter(cohortName != cohortsIds[1]) %>%
+      filter(cohortName != cohortIds[1]) %>%
       select(cohortId, cohortName)
     
     cohorts <- dplyr::bind_rows(
@@ -81,5 +81,5 @@ runTreatmentPatterns <- function(connectionDetails,
         minFreq = minCellCount,
         archiveName = NULL
       )
-  } 
+  # } 
 }

@@ -1,4 +1,4 @@
-Package: EhdenAlopecia 
+Package: EhdenAlopecia
 Version: 1.1.1
 Authors@R: person("Ross", "Williams", , "r.williams@derasmusmc.nl", role = c("aut", "cre"))
 Description: This package creates the cohorts for this EHDEN Alopecia study study. Based on this cohort diagnostics, incidence and prevalence rates and treatment patterns are analysis are performed.

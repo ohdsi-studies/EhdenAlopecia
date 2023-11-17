@@ -18,12 +18,16 @@ runStudy <- function(connectionDetails,
                      cdmDatabaseSchema, 
                      cohortDatabaseSchema,
                      instantiateCohorts = FALSE,
-                     instantiateTreatmentCohorts = FALSE,
+                     # instantiateTreatmentCohorts = FALSE,
                      runDiagnostics = FALSE,
                      runPatternAnalysis = FALSE,
                      outputFolder,
                      databaseId,
                      minCellCount) {
+  
+  if (!dir.exists(outputFolder)) {
+    dir.create(outputFolder)
+  }
   
   if (instantiateCohorts){
     cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
@@ -31,6 +35,13 @@ runStudy <- function(connectionDetails,
                   type = "cohorts",
                   cdmDatabaseSchema = cdmDatabaseSchema, 
                   cohortDatabaseSchema = cohortDatabaseSchema)
+    cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
+                                                     cohortDatabaseSchema = cohortDatabaseSchema,
+                                                     cohortTable = cohortTable)
+    cohortsGenerated <- cohortsGenerated %>%
+      left_join(cohortCounts, by = "cohortId") 
+    cohortsGenerated <- cohortsGenerated %>%
+      filter(cohortSubjects > 0)
     readr::write_csv(cohortsGenerated, file.path(outputFolder, "cohortsGenerated.csv"))
   }
   
@@ -48,20 +59,29 @@ runStudy <- function(connectionDetails,
   }
   
   if (runPatternAnalysis){
-    if (instantiateTreatmentCohorts){
-      cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
-                                        cohortTable = cohortTable,
-                                        type = "treatments",
-                                        cdmDatabaseSchema = cdmDatabaseSchema, 
-                                        cohortDatabaseSchema = cohortDatabaseSchema)
-      readr::write_csv(cohortsGenerated, file.path(outputFolder, "treatmentCohortsGenerated.csv"))
-    }
-    targetCohortsGenerated <- readr::read_csv(file.path(outputFolder, "treatmentCohortsGenerated.csv"))
-    treatmentCohortsGenerated  <- readr::read_csv(file.path(outputFolder, "treatmentCohortsGenerated.csv"))
-    cohortsGenerated <- targetCohortsGenerated %>%
-      dplyr::bind_rows(treatmentCohortsGenerated)
-    for (cohort in c(92, 93, 94, 95, 96 ,97, 100)){
-      cohortIds <- c(cohort, 101:127) 
+    # if (instantiateTreatmentCohorts){
+    #   cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
+    #                                     cohortTable = cohortTable,
+    #                                     type = "treatment_cohorts",
+    #                                     cdmDatabaseSchema = cdmDatabaseSchema, 
+    #                                     cohortDatabaseSchema = cohortDatabaseSchema)
+    #   readr::write_csv(cohortsGenerated, file.path(outputFolder, "treatmentCohortsGenerated.csv"))
+    # }
+    targetCohortsGenerated <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>% 
+      filter(cohortId <= 100)
+
+    treatmentCohortsGenerated  <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
+      filter(cohortId > 100)
+    # cohortsGenerated <- targetCohortsGenerated[1,] %>%
+    #   dplyr::bind_rows(treatmentCohortsGenerated)
+    for (i in seq(1:length(targetCohortsGenerated$cohortId))) {
+      # i <- 1
+      cohortsGenerated <- targetCohortsGenerated[i,] %>%
+        dplyr::bind_rows(treatmentCohortsGenerated)
+      
+      # cohortIds <- c(cohort, 101:127)
+      # cohort <- 100
+      cohortIds <- cohortsGenerated$cohortId
       runTreatmentPatterns(connectionDetails = connectionDetails, 
                          cdmDatabaseSchema = cdmDatabaseSchema, 
                          cohortDatabaseSchema = cohortDatabaseSchema, 
@@ -70,6 +90,7 @@ runStudy <- function(connectionDetails,
                          outputFolder = outputFolder, 
                          cohortIds = cohortIds, 
                          minCellCount = minCellCount)
-    }
+    
+      }
   }
 }

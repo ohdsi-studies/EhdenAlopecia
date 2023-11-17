@@ -35,9 +35,10 @@
 #Load the library
 
 library(EhdenAlopecia)
+library(dplyr)
 # database metadata and connection details -----
 # The name/ acronym for the database
-databaseId <- ""
+databaseId <- "IPCI"
 
 # Database connection details -----
 #connection details
@@ -45,21 +46,22 @@ databaseId <- ""
 
 
 # Details for connecting to the server:
-dbms <- ""
-user <- ""
-pw <- ""
-server <- ""
-port <- ""
+dbms <- Sys.getenv("dbms")
+user <- Sys.getenv("user")
+password <- Sys.getenv("password")
+server <- Sys.getenv("host")
+port <- Sys.getenv
+connectionString <- Sys.getenv("connectionString")
 
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
-                                                                server = server,
+                                                                connectionString = connectionString,
                                                                 user = user,
-                                                                password = pw,
+                                                                password = password,
                                                                 port = port)
 
 
-cdmDatabaseSchema <- ""
-cohortDatabaseSchema <- ""
+cdmDatabaseSchema <- "cdm"
+cohortDatabaseSchema <- "cbarboza"
 
 
 # Name of table prefix to use in the result schema for tables created during the study.
@@ -79,7 +81,8 @@ outputFolder <- "results"
 
 #choose analysis to run
 instantiateCohorts <- TRUE
-runDiagnostics <- TRUE
+runDiagnostics <- FALSE
+instantiateTreatmentCohorts <- FALSE
 runPatternAnalysis <- TRUE
 
 ### Do not edit below here
@@ -91,6 +94,7 @@ EhdenAlopecia::runStudy(
   cohortDatabaseSchema = cohortDatabaseSchema,
   instantiateCohorts = instantiateCohorts,
   runDiagnostics = runDiagnostics,
+  instantiateTreatmentCohorts = instantiateTreatmentCohorts,
   runPatternAnalysis = runPatternAnalysis,
   outputFolder = outputFolder,
   databaseId = databaseId,
