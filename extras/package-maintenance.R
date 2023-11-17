@@ -12,7 +12,7 @@ getCdmSources(baseUrl)
 
 cohortDefinitionSet <- ROhdsiWebApi::exportCohortDefinitionSet(
     baseUrl,
-    c(92:97, 100)
+    c(92:97, 100, setdiff(101:127, 118))
 )
 write.csv(cohortDefinitionSet, 'inst/cohortDefinitionSet.csv')
 
