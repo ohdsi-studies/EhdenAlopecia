@@ -43,7 +43,7 @@ runTreatmentPatterns <- function(connectionDetails,
     
     # Select everything BUT target cohorts
     eventCohorts <- cohortsGenerated %>%
-      filter(cohortName != cohortsIds[1]) %>%
+      filter(cohortName != cohortIds[1]) %>%
       select(cohortId, cohortName)
     
     cohorts <- dplyr::bind_rows(
