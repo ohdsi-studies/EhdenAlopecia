@@ -38,18 +38,17 @@ runTreatmentPatterns <- function(connectionDetails,
   if (nrow(tpCohorts) > 0) {
     # Select target cohort
     targetCohorts <- cohortsGenerated %>%
-      filter(cohortName == "") %>%
+      filter(cohortName == cohortIds[1]) %>%
       select(cohortId, cohortName)
     
     # Select everything BUT target cohorts
     eventCohorts <- cohortsGenerated %>%
-      filter(cohortName != "") %>%
+      filter(cohortName != cohortsIds[1]) %>%
       select(cohortId, cohortName)
     
     cohorts <- dplyr::bind_rows(
       targetCohorts %>% mutate(type = "target"),
-      eventCohorts %>% mutate(type = "event"),
-      exitCohorts %>% mutate(type = "exit")
+      eventCohorts %>% mutate(type = "event")
     )
     
     # Compute pathways
@@ -78,7 +77,7 @@ runTreatmentPatterns <- function(connectionDetails,
     TreatmentPatterns::export(
         andromeda = pathways,
         outputPath = here::here(outputFolder),
-        ageWindow = c(18,45,65,150), #TODO: define this correctly
+        ageWindow = c(2,6,11,17,65,150), 
         minFreq = minCellCount,
         archiveName = NULL
       )

@@ -18,6 +18,7 @@ runStudy <- function(connectionDetails,
                      cdmDatabaseSchema, 
                      cohortDatabaseSchema,
                      instantiateCohorts = FALSE,
+                     instantiateTreatmentCohorts = FALSE,
                      runDiagnostics = FALSE,
                      runPatternAnalysis = FALSE,
                      outputFolder,
@@ -26,7 +27,8 @@ runStudy <- function(connectionDetails,
   
   if (instantiateCohorts){
     cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
-                  cohortTable = cohortTable, 
+                  cohortTable = cohortTable,
+                  type = "cohorts",
                   cdmDatabaseSchema = cdmDatabaseSchema, 
                   cohortDatabaseSchema = cohortDatabaseSchema)
     readr::write_csv(cohortsGenerated, file.path(outputFolder, "cohortsGenerated.csv"))
@@ -34,7 +36,7 @@ runStudy <- function(connectionDetails,
   
   if (runDiagnostics){
     cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet.csv")
-    CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet,
+    CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet, 
                        connectionDetails = connectionDetails,
                        cohortTable = cohortTable,
                        cohortDatabaseSchema = cohortDatabaseSchema,
@@ -45,13 +47,22 @@ runStudy <- function(connectionDetails,
     )
   }
   
-  if (runPatternAnalysis)
-    {
-    if (!instantiateCohorts)
-      {
-    cohortsGenerated  <- readr::read_csv("cohortsGenerated.csv")
+  if (runPatternAnalysis){
+    if (instantiateTreatmentCohorts){
+      cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
+                                        cohortTable = cohortTable,
+                                        type = "treatments",
+                                        cdmDatabaseSchema = cdmDatabaseSchema, 
+                                        cohortDatabaseSchema = cohortDatabaseSchema)
+      readr::write_csv(cohortsGenerated, file.path(outputFolder, "treatmentCohortsGenerated.csv"))
     }
-    runTreatmentPatterns(connectionDetails = connectionDetails, 
+    targetCohortsGenerated <- readr::read_csv(file.path(outputFolder, "treatmentCohortsGenerated.csv"))
+    treatmentCohortsGenerated  <- readr::read_csv(file.path(outputFolder, "treatmentCohortsGenerated.csv"))
+    cohortsGenerated <- targetCohortsGenerated %>%
+      dplyr::bind_rows(treatmentCohortsGenerated)
+    for (cohort in c(92, 93, 94, 95, 96 ,97, 100)){
+      cohortIds <- c(cohort, 101:127) 
+      runTreatmentPatterns(connectionDetails = connectionDetails, 
                          cdmDatabaseSchema = cdmDatabaseSchema, 
                          cohortDatabaseSchema = cohortDatabaseSchema, 
                          cohortTable = cohortTable, 
@@ -59,5 +70,6 @@ runStudy <- function(connectionDetails,
                          outputFolder = outputFolder, 
                          cohortIds = cohortIds, 
                          minCellCount = minCellCount)
+    }
   }
 }

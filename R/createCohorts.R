@@ -2,12 +2,14 @@
 #'
 #' @param connectionDetails connection details generated using DatabaseConnector::createConnectionDetails()
 #' @param cohortTable Name of the table to be created where cohorts will be stored
+#' @param type Which cohorts to create
 #' @param cdmDatabaseSchema name of the schema where the cdm is stored
 #' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
 #'
 #' @export
 createCohorts <- function(connectionDetails, 
-                          cohortTable, 
+                          cohortTable,
+                          type = c("cohorts", "treatments"),
                           cdmDatabaseSchema, 
                           cohortDatabaseSchema){
   
@@ -17,7 +19,7 @@ createCohorts <- function(connectionDetails,
   
   # Fill the cohort set using  cohorts included in this 
   # package as an example
-  cohortJsonFiles <- list.files(path = system.file("cohorts", package = "EhdenAlopecia"), full.names = TRUE)
+  cohortJsonFiles <- list.files(path = system.file(type, package = "EhdenAlopecia"), full.names = TRUE)
   for (i in 1:length(cohortJsonFiles)) {
   cohortJsonFileName <- cohortJsonFiles[i]
   cohortName <- tools::file_path_sans_ext(basename(cohortJsonFileName))
