@@ -35,6 +35,7 @@
 #Load the library
 
 library(EhdenAlopecia)
+library(here)
 
 # database metadata and connection details -----
 # The name/ acronym for the database
@@ -75,7 +76,7 @@ cohortTable <- "alopecia_ehden"
 minCellCount <- 5
 
 #specify where to save the results
-outputFolder <- "results"
+outputFolder <- here::here("results")
 
 
 #choose analysis to run
