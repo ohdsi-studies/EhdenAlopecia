@@ -13,10 +13,7 @@ Imports:
     dplyr,
     magrittr,
     readr,
-    CirceR,
     here,
-    CohortDiagnostics,
-    CohortGenerator,
     TreatmentPatterns,
 Suggests: 
     testthat (>= 3.0.0),
@@ -31,4 +28,8 @@ Suggests:
     lubridate,
     rlang,
     jsonlite
+Remotes:
+  ohdsi/CohortDiagnostics,
+  ohdsi/CirceR,
+  ohdsi/CohortGenerator
 Config/testthat/edition: 3
