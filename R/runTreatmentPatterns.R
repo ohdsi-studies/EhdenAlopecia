@@ -43,7 +43,7 @@ runTreatmentPatterns <- function(connectionDetails,
     )
     
     # Compute pathways
-    pathways <- TreatmentPatterns::executeTreatmentPatterns(
+    TreatmentPatterns::executeTreatmentPatterns(
       cohorts = cohorts,
       cohortTableName = cohortTable,
       outputPath = outputSubDir,
@@ -65,11 +65,11 @@ runTreatmentPatterns <- function(connectionDetails,
       addNoPaths = TRUE
     )
     #export results
-    TreatmentPatterns::export(
-        andromeda = pathways,
-        outputPath = outputSubDir,
-        ageWindow = c(2,6,11,17,65,150), 
-        minFreq = minCellCount,
-        archiveName = NULL
-      )
+    # TreatmentPatterns::export(
+    #     andromeda = pathways,
+    #     outputPath = outputSubDir,
+    #     ageWindow = c(2,6,11,17,65,150), 
+    #     minFreq = minCellCount,
+    #     archiveName = NULL
+    #   )
 }
