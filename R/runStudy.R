@@ -11,7 +11,9 @@
 #' @param databaseId a short name that can identify the database used
 #' @param minCellCount the minimum number of patients that can be shared for any single count in the results
 #' 
-#' @import dplyr TreatmentPatterns CohortGenerator CohortDiagnostics readr
+#' @import dplyr TreatmentPatterns CohortDiagnostics readr
+#' @importFrom CohortGenerator getCohortCounts
+#' @importFrom CohortDiagnostics executeDiagnostics
 #' @export
 
 runStudy <- function(connectionDetails,
@@ -29,13 +31,14 @@ runStudy <- function(connectionDetails,
   if (!dir.exists(outputFolder)) {
     dir.create(outputFolder)
   }
+  
   # Instantiate cohorts
-  if (instantiateCohorts){
+  if (instantiateCohorts) {
     cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
-                  cohortTable = cohortTable,
-                  type = "cohorts",
-                  cdmDatabaseSchema = cdmDatabaseSchema, 
-                  cohortDatabaseSchema = cohortDatabaseSchema)
+                                      cohortTable = cohortTable,
+                                      type = "cohorts",
+                                      cdmDatabaseSchema = cdmDatabaseSchema, 
+                                      cohortDatabaseSchema = cohortDatabaseSchema)
     cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
                                                      cohortDatabaseSchema = cohortDatabaseSchema,
                                                      cohortTable = cohortTable)
@@ -45,17 +48,18 @@ runStudy <- function(connectionDetails,
       filter(cohortSubjects > 0)
     readr::write_csv(cohortsGenerated, file.path(outputFolder, "cohortsGenerated.csv"))
   }
+  
   # CohortDiagnostics
-  if (runDiagnostics){
+  if (runDiagnostics) {
     cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet.csv")
     CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet, 
-                       connectionDetails = connectionDetails,
-                       cohortTable = cohortTable,
-                       cohortDatabaseSchema = cohortDatabaseSchema,
-                       cdmDatabaseSchema = cdmDatabaseSchema,
-                       exportFolder = outputFolder,
-                       databaseId = databaseId,
-                       minCellCount = minCellCount
+                                          connectionDetails = connectionDetails,
+                                          cohortTable = cohortTable,
+                                          cohortDatabaseSchema = cohortDatabaseSchema,
+                                          cdmDatabaseSchema = cdmDatabaseSchema,
+                                          exportFolder = outputFolder,
+                                          databaseId = databaseId,
+                                          minCellCount = minCellCount
     )
   }
   
@@ -67,7 +71,7 @@ runStudy <- function(connectionDetails,
     treatmentCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
       filter(cohortId > 100)
     for (i in seq(1:length(targetCohorts$cohortId))) {
-      outputSubDir <- file.path(outputFolder, 'treatmentPatterns', i)
+      outputSubDir <- file.path(outputFolder, 'treatmentPatterns', targetCohorts[i,]$cohortId)
       if (!dir.exists(outputSubDir)) {
         dir.create(outputSubDir, recursive = TRUE)
       }

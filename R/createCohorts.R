@@ -5,6 +5,10 @@
 #' @param type Which cohorts to create
 #' @param cdmDatabaseSchema name of the schema where the cdm is stored
 #' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
+#' 
+#' @import dplyr
+#' @importFrom CirceR cohortExpressionFromJson buildCohortQuery
+#' @importFrom CohortGenerator getCohortTableNames createCohortTables generateCohortSet getCohortCounts
 #'
 #' @export
 createCohorts <- function(connectionDetails, 

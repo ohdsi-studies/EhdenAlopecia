@@ -35,7 +35,7 @@
 #Load the library
 
 library(EhdenAlopecia)
-library(dplyr)
+
 # database metadata and connection details -----
 # The name/ acronym for the database
 databaseId <- "IPCI"

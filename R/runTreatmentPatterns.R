@@ -11,7 +11,7 @@
 #' @param cohortIds the cohortIds to be used form the cohort table
 #' @param minCellCount minimum cell count
 #' 
-#' @import dplyr TreatmentPatterns CohortGenerator CohortDiagnostics readr
+#' @import dplyr TreatmentPatterns
 #' 
 #' @return the drug utilisation results
 #'
