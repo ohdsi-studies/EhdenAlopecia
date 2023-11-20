@@ -11,7 +11,8 @@
 #' @param databaseId a short name that can identify the database used
 #' @param minCellCount the minimum number of patients that can be shared for any single count in the results
 #' 
-#' @import dplyr TreatmentPatterns CohortDiagnostics readr
+#' @import dplyr
+#' @importFrom readr write_csv read_csv
 #' @importFrom CohortGenerator getCohortCounts
 #' @importFrom CohortDiagnostics executeDiagnostics
 #' @export
