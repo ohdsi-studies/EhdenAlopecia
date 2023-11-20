@@ -64,12 +64,4 @@ runTreatmentPatterns <- function(connectionDetails,
       minFreq = minCellCount,
       addNoPaths = TRUE
     )
-    #export results
-    # TreatmentPatterns::export(
-    #     andromeda = pathways,
-    #     outputPath = outputSubDir,
-    #     ageWindow = c(2,6,11,17,65,150), 
-    #     minFreq = minCellCount,
-    #     archiveName = NULL
-    #   )
 }

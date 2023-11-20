@@ -13,13 +13,13 @@ Imports:
     dplyr,
     magrittr,
     readr,
-    here,
     TreatmentPatterns,
     CohortDiagnostics,
     CirceR,
     CohortGenerator
 Suggests: 
-    testthat (>= 3.0.0),
+    testthat (>= 3.0.0
+    here,
     rmarkdown,
     checkmate,
     SqlRender,
