@@ -36,7 +36,6 @@ Analytic software to perform large-scale distributed analysis of patients with A
 
 # Requirements
 
-
 A database in Common Data Model version 5 in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, Google BigQuery, or Microsoft APS.
 R version 4.0.5
 On Windows: RTools
@@ -44,28 +43,47 @@ Java
 100 GB of free disk space
 
 # How to run
+
 1. See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
 
 2. Clone the EhdenAlopecia package into your local R environment.
 
 3. Open your study package in RStudio. Use the following code to install all the dependencies:
+
 ```R
-install.packages(c("DBI",
-    "dplyr",
-    "glue",
-    "zip",
-    "magrittr",
-    "checkmate",
-    "log4r",
-    "lubridate",
-    "rlang",
-    "readr")
-)
+
+install.packages(c("TreatmentPatterns", 
+                   "DBI",
+                   "dplyr",
+                   "glue",
+                   "zip",
+                   "magrittr",
+                   "checkmate",
+                   "lubridate",
+                   "rlang",
+                   "readr",
+                   "here",
+                   "rmarkdown",
+                   "checkmate",
+                   "SqlRender",
+                   "duckdb",
+                   "ParallelLogger",
+                   "DBI",
+                   "glue",
+                   "zip",
+                   "lubridate",
+                   "rlang",
+                   "jsonlite"))
+
+remotes::install_github(c("ohdsi/CirceR",
+                          "ohdsi/CohortGenerator",
+                          "ohdsi/CohortDiagnostics"))
+                          
 ```
 
 In RStudio, select 'Build' then 'Install and Restart' to install the  package.
 
-After succesfully installing the package. Open the extras/codeTorun.R and run the following code
+After succesfully installing the package. Open the extras/CodeTorun.R and run the following code:
 
 ```R
 #Load the library

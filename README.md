@@ -41,24 +41,41 @@ Java 100 GB of free disk space
     install all the dependencies:
 
 ``` r
-install.packages(c("DBI",
-    "dplyr",
-    "glue",
-    "zip",
-    "magrittr",
-    "checkmate",
-    "log4r",
-    "lubridate",
-    "rlang",
-    "readr")
-)
+
+install.packages(c("TreatmentPatterns", 
+                   "DBI",
+                   "dplyr",
+                   "glue",
+                   "zip",
+                   "magrittr",
+                   "checkmate",
+                   "lubridate",
+                   "rlang",
+                   "readr",
+                   "here",
+                   "rmarkdown",
+                   "checkmate",
+                   "SqlRender",
+                   "duckdb",
+                   "ParallelLogger",
+                   "DBI",
+                   "glue",
+                   "zip",
+                   "lubridate",
+                   "rlang",
+                   "jsonlite"))
+
+remotes::install_github(c("ohdsi/CirceR",
+                          "ohdsi/CohortGenerator",
+                          "ohdsi/CohortDiagnostics"))
+                          
 ```
 
 In RStudio, select ‘Build’ then ‘Install and Restart’ to install the
 package.
 
-After succesfully installing the package. Open the extras/codeTorun.R
-and run the following code
+After succesfully installing the package. Open the extras/CodeTorun.R
+and run the following code:
 
 ``` r
 #Load the library
