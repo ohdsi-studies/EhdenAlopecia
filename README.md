@@ -74,7 +74,8 @@ remotes::install_github(c("ohdsi/CirceR",
 In RStudio, select ‘Build’ then ‘Install and Restart’ to install the
 package.
 
-After succesfully installing the package. Open the extras/CodeTorun.R
+After succesfully installing the package. Open the
+[inst/extras/CodeTorun.R](https://raw.githubusercontent.com/ohdsi-studies/EhdenAlopecia/main/inst/extras/CodeToRun.R)
 and run the following code:
 
 ``` r
