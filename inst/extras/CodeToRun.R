@@ -80,9 +80,9 @@ outputFolder <- here::here("results")
 
 
 #choose analysis to run
-instantiateCohorts <- TRUE
+instantiateCohorts <- FALSE
 runDiagnostics <- FALSE
-runPatternAnalysis <- TRUE
+runPatternAnalysis <- FALSE
 
 ### Do not edit below here
 EhdenAlopecia::runStudy(
