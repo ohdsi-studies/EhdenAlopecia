@@ -25,10 +25,10 @@ patients with Alopecia as part of the EHDEN study-athon.
 
 # Requirements
 
-A database mapped to the OMOP Common Data Model version 5 in one of these platforms: SQL
-Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift,
-Google BigQuery, or Microsoft APS. R version 4.0.5 On Windows: RTools
-Java 100 GB of free disk space
+A database mapped to the OMOP Common Data Model version 5 in one of
+these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache
+Impala, Amazon RedShift, Google BigQuery, or Microsoft APS. R version
+4.0.5 On Windows: RTools Java 100 GB of free disk space
 
 # How to run
 
@@ -127,9 +127,9 @@ outputFolder <- here::here("results")
 
 
 #choose analysis to run
-instantiateCohorts <- TRUE
-runDiagnostics <- TRUE
-runPatternAnalysis <- TRUE
+instantiateCohorts <- FALSE
+runDiagnostics <- FALSE
+runPatternAnalysis <- FALSE
 
 ### Do not edit below here
 EhdenAlopecia::runStudy(

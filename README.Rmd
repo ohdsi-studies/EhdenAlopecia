@@ -36,7 +36,7 @@ Analytic software to perform large-scale distributed analysis of patients with A
 
 # Requirements
 
-A database in Common Data Model version 5 in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, Google BigQuery, or Microsoft APS.
+A database mapped to the OMOP Common Data Model version 5 in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, Google BigQuery, or Microsoft APS.
 R version 4.0.5
 On Windows: RTools
 Java
@@ -134,9 +134,9 @@ outputFolder <- here::here("results")
 
 
 #choose analysis to run
-instantiateCohorts <- TRUE
-runDiagnostics <- TRUE
-runPatternAnalysis <- TRUE
+instantiateCohorts <- FALSE
+runDiagnostics <- FALSE
+runPatternAnalysis <- FALSE
 
 ### Do not edit below here
 EhdenAlopecia::runStudy(
