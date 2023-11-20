@@ -39,7 +39,7 @@ library(here)
 
 # database metadata and connection details -----
 # The name/ acronym for the database
-databaseId <- "IPCI"
+databaseId <- "..."
 
 # Database connection details -----
 #connection details
@@ -60,8 +60,8 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
                                                                 port = port)
 
 
-cdmDatabaseSchema <- "cdm"
-cohortDatabaseSchema <- "cbarboza"
+cdmDatabaseSchema <- "..."
+cohortDatabaseSchema <- "..."
 
 
 # Name of table prefix to use in the result schema for tables created during the study.
