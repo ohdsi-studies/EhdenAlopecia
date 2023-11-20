@@ -10,7 +10,7 @@ runTreatmentPatterns(
   cohortDatabaseSchema,
   cohortTable,
   cohortsGenerated,
-  outputFolder,
+  outputSubDir,
   tablePrefix = NULL,
   logger = NULL,
   cohortIds,
@@ -28,7 +28,7 @@ runTreatmentPatterns(
 
 \item{cohortsGenerated}{A table contianing the output of the createCohorts function, detailing the cohorts that have been instatiated}
 
-\item{outputFolder}{The output directory where the results should be saved}
+\item{outputSubDir}{The output directory where the results should be saved}
 
 \item{tablePrefix}{table prefix}
 
