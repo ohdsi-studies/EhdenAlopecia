@@ -10,12 +10,12 @@
 #' @param logger logger object
 #' @param cohortIds the cohortIds to be used form the cohort table
 #' @param minCellCount minimum cell count
-#'
+#' 
+#' @import dplyr TreatmentPatterns CohortGenerator CohortDiagnostics readr
+#' 
 #' @return the drug utilisation results
 #'
-#' @examples
 #' @export
-
 runTreatmentPatterns <- function(connectionDetails,
                                  cdmDatabaseSchema,
                                  cohortDatabaseSchema,
@@ -26,16 +26,7 @@ runTreatmentPatterns <- function(connectionDetails,
                                  logger = NULL,
                                  cohortIds,
                                  minCellCount = 5) {
-  # # med level treatment patterns -----
-  # cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
-  #                                                  cohortDatabaseSchema = cohortDatabaseSchema,
-  #                                                  cohortTable = cohortTable)
-  # tpCohorts <- cohortsGenerated %>%
-  #   dplyr::inner_join(cohortCounts,
-  #              dplyr::join_by(cohortId)) %>%
-  #   dplyr::filter(cohortSubjects > 0) # make sure at least someone appears
-  
-  # if (nrow(tpCohorts) > 0) {
+
     # Select target cohort
     targetCohorts <- cohortsGenerated %>%
       filter(cohortName == cohortIds[1]) %>%  
@@ -81,5 +72,4 @@ runTreatmentPatterns <- function(connectionDetails,
         minFreq = minCellCount,
         archiveName = NULL
       )
-  # } 
 }

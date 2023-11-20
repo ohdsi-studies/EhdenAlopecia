@@ -7,6 +7,7 @@
 createCohorts(
   connectionDetails,
   cohortTable,
+  type = c("cohorts"),
   cdmDatabaseSchema,
   cohortDatabaseSchema
 )
@@ -15,6 +16,8 @@ createCohorts(
 \item{connectionDetails}{connection details generated using DatabaseConnector::createConnectionDetails()}
 
 \item{cohortTable}{Name of the table to be created where cohorts will be stored}
+
+\item{type}{Which cohorts to create}
 
 \item{cdmDatabaseSchema}{name of the schema where the cdm is stored}
 

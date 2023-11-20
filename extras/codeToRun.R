@@ -44,7 +44,6 @@ databaseId <- "IPCI"
 #connection details
 #User specified input
 
-
 # Details for connecting to the server:
 dbms <- Sys.getenv("dbms")
 user <- Sys.getenv("user")
@@ -86,7 +85,6 @@ instantiateTreatmentCohorts <- FALSE
 runPatternAnalysis <- TRUE
 
 ### Do not edit below here
-
 EhdenAlopecia::runStudy(
   connectionDetails = connectionDetails, 
   cohortTable = cohortTable, 
@@ -94,7 +92,6 @@ EhdenAlopecia::runStudy(
   cohortDatabaseSchema = cohortDatabaseSchema,
   instantiateCohorts = instantiateCohorts,
   runDiagnostics = runDiagnostics,
-  instantiateTreatmentCohorts = instantiateTreatmentCohorts,
   runPatternAnalysis = runPatternAnalysis,
   outputFolder = outputFolder,
   databaseId = databaseId,

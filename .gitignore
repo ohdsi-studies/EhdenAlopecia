@@ -7,3 +7,6 @@ errorReport*
 Results/*
 
 .DS_Store
+CodeToRunSynthea.R
+CodeToRunSnowflake.R
+CodeToRunIPCI.R

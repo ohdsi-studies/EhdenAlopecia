@@ -10,7 +10,8 @@
 #' @param outputFolder The folder where the results should be written
 #' @param databaseId a short name that can identify the database used
 #' @param minCellCount the minimum number of patients that can be shared for any single count in the results
-#'
+#' 
+#' @import dplyr TreatmentPatterns CohortGenerator CohortDiagnostics readr
 #' @export
 
 runStudy <- function(connectionDetails,
@@ -18,17 +19,17 @@ runStudy <- function(connectionDetails,
                      cdmDatabaseSchema, 
                      cohortDatabaseSchema,
                      instantiateCohorts = FALSE,
-                     # instantiateTreatmentCohorts = FALSE,
                      runDiagnostics = FALSE,
                      runPatternAnalysis = FALSE,
                      outputFolder,
                      databaseId,
                      minCellCount) {
   
+  # Create output folder
   if (!dir.exists(outputFolder)) {
     dir.create(outputFolder)
   }
-  
+  # Instantiate cohorts
   if (instantiateCohorts){
     cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
                   cohortTable = cohortTable,
@@ -44,7 +45,7 @@ runStudy <- function(connectionDetails,
       filter(cohortSubjects > 0)
     readr::write_csv(cohortsGenerated, file.path(outputFolder, "cohortsGenerated.csv"))
   }
-  
+  # CohortDiagnostics
   if (runDiagnostics){
     cohortDefinitionSet <- readr::read_csv("inst/cohortDefinitionSet.csv")
     CohortDiagnostics::executeDiagnostics(cohortDefinitionSet = cohortDefinitionSet, 
@@ -58,38 +59,30 @@ runStudy <- function(connectionDetails,
     )
   }
   
+  # TreatmentPatterns
   if (runPatternAnalysis){
-    # if (instantiateTreatmentCohorts){
-    #   cohortsGenerated <- createCohorts(connectionDetails = connectionDetails, 
-    #                                     cohortTable = cohortTable,
-    #                                     type = "treatment_cohorts",
-    #                                     cdmDatabaseSchema = cdmDatabaseSchema, 
-    #                                     cohortDatabaseSchema = cohortDatabaseSchema)
-    #   readr::write_csv(cohortsGenerated, file.path(outputFolder, "treatmentCohortsGenerated.csv"))
-    # }
-    targetCohortsGenerated <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>% 
+    # Target and treatment cohorts sections
+    targetCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>% 
       filter(cohortId <= 100)
-
-    treatmentCohortsGenerated  <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
+    treatmentCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
       filter(cohortId > 100)
-    # cohortsGenerated <- targetCohortsGenerated[1,] %>%
-    #   dplyr::bind_rows(treatmentCohortsGenerated)
-    for (i in seq(1:length(targetCohortsGenerated$cohortId))) {
-      # i <- 1
-      cohortsGenerated <- targetCohortsGenerated[i,] %>%
-        dplyr::bind_rows(treatmentCohortsGenerated)
-      
-      # cohortIds <- c(cohort, 101:127)
-      # cohort <- 100
+    for (i in seq(1:length(targetCohorts$cohortId))) {
+      outputSubDir <- file.path(outputFolder, 'treatmentPatterns', i)
+      if (!dir.exists(outputSubDir)) {
+        dir.create(outputSubDir, recursive = TRUE)
+      }
+      # TreatmentPathways for each target cohort with treatments
+      cohortsGenerated <- targetCohorts[i,] %>%
+        dplyr::bind_rows(treatmentCohorts)
       cohortIds <- cohortsGenerated$cohortId
       runTreatmentPatterns(connectionDetails = connectionDetails, 
-                         cdmDatabaseSchema = cdmDatabaseSchema, 
-                         cohortDatabaseSchema = cohortDatabaseSchema, 
-                         cohortTable = cohortTable, 
-                         cohortsGenerated = cohortsGenerated, 
-                         outputFolder = outputFolder, 
-                         cohortIds = cohortIds, 
-                         minCellCount = minCellCount)
+                           cdmDatabaseSchema = cdmDatabaseSchema, 
+                           cohortDatabaseSchema = cohortDatabaseSchema, 
+                           cohortTable = cohortTable, 
+                           cohortsGenerated = cohortsGenerated, 
+                           outputFolder = outputSubDir, 
+                           cohortIds = cohortIds, 
+                           minCellCount = minCellCount)
     
       }
   }
