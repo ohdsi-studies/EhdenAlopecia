@@ -25,7 +25,7 @@ patients with Alopecia as part of the EHDEN study-athon.
 
 # Requirements
 
-A database in Common Data Model version 5 in one of these platforms: SQL
+A database mapped to the OMOP Common Data Model version 5 in one of these platforms: SQL
 Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift,
 Google BigQuery, or Microsoft APS. R version 4.0.5 On Windows: RTools
 Java 100 GB of free disk space
