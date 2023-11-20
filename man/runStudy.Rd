@@ -11,6 +11,7 @@ runStudy(
   cohortDatabaseSchema,
   instantiateCohorts = FALSE,
   runDiagnostics = FALSE,
+  runPatternAnalysis = FALSE,
   outputFolder,
   databaseId,
   minCellCount
@@ -28,6 +29,8 @@ runStudy(
 \item{instantiateCohorts}{choose whether to instantiate the cohorts on your database}
 
 \item{runDiagnostics}{choose whether to run the cohort diagnostics}
+
+\item{runPatternAnalysis}{choose whether to run the treatment patterns analysis}
 
 \item{outputFolder}{The folder where the results should be written}
 

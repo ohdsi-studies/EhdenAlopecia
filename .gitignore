@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+errorReport*
+Results/*
+
+.DS_Store
+CodeToRunSynthea.R
+CodeToRunSnowflake.R
+CodeToRunIPCI.R
+errorReportSql.txt

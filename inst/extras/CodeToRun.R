@@ -35,31 +35,33 @@
 #Load the library
 
 library(EhdenAlopecia)
+library(here)
+
 # database metadata and connection details -----
 # The name/ acronym for the database
-databaseId <- ""
+databaseId <- "..."
 
 # Database connection details -----
 #connection details
 #User specified input
 
-
 # Details for connecting to the server:
-dbms <- ""
-user <- ""
-pw <- ""
-server <- ""
-port <- ""
+dbms <- Sys.getenv("dbms")
+user <- Sys.getenv("user")
+password <- Sys.getenv("password")
+server <- Sys.getenv("host")
+port <- Sys.getenv
+connectionString <- Sys.getenv("connectionString")
 
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,
-                                                                server = server,
+                                                                connectionString = connectionString,
                                                                 user = user,
-                                                                password = pw,
+                                                                password = password,
                                                                 port = port)
 
 
-cdmDatabaseSchema <- ""
-cohortDatabaseSchema <- ""
+cdmDatabaseSchema <- "..."
+cohortDatabaseSchema <- "..."
 
 
 # Name of table prefix to use in the result schema for tables created during the study.
@@ -74,16 +76,15 @@ cohortTable <- "alopecia_ehden"
 minCellCount <- 5
 
 #specify where to save the results
-outputFolder <- "results"
+outputFolder <- here::here("results")
 
 
 #choose analysis to run
-instantiateCohorts <- TRUE
-runDiagnostics <- TRUE
-
+instantiateCohorts <- FALSE
+runDiagnostics <- FALSE
+runPatternAnalysis <- FALSE
 
 ### Do not edit below here
-
 EhdenAlopecia::runStudy(
   connectionDetails = connectionDetails, 
   cohortTable = cohortTable, 
@@ -91,6 +92,7 @@ EhdenAlopecia::runStudy(
   cohortDatabaseSchema = cohortDatabaseSchema,
   instantiateCohorts = instantiateCohorts,
   runDiagnostics = runDiagnostics,
+  runPatternAnalysis = runPatternAnalysis,
   outputFolder = outputFolder,
   databaseId = databaseId,
   minCellCount = minCellCount
