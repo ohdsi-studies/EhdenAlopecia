@@ -69,7 +69,7 @@ runStudy <- function(connectionDetails,
     # Target and treatment cohorts sections
     targetCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>% 
       filter(cohortId <= 100)
-    treatmentCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
+    eventCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
       filter(between(cohortId, 100, 114))
     for (i in seq(1:length(targetCohorts$cohortId))) {
       outputSubDir <- file.path(outputFolder, 'treatmentPatterns', targetCohorts[i,]$cohortId)
@@ -78,7 +78,7 @@ runStudy <- function(connectionDetails,
       }
       # TreatmentPathways for each target cohort with treatments
       cohortsGenerated <- targetCohorts[i,] %>%
-        dplyr::bind_rows(treatmentCohorts)
+        dplyr::bind_rows(eventCohorts)
       cohortIds <- cohortsGenerated$cohortId
       runTreatmentPatterns(connectionDetails = connectionDetails, 
                            cdmDatabaseSchema = cdmDatabaseSchema, 
