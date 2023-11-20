@@ -85,7 +85,7 @@ runStudy <- function(connectionDetails,
                            cohortDatabaseSchema = cohortDatabaseSchema, 
                            cohortTable = cohortTable, 
                            cohortsGenerated = cohortsGenerated, 
-                           outputFolder = outputSubDir, 
+                           outputSubDir = outputSubDir, 
                            cohortIds = cohortIds, 
                            minCellCount = minCellCount)
     

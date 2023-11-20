@@ -82,7 +82,6 @@ outputFolder <- here::here("results")
 #choose analysis to run
 instantiateCohorts <- TRUE
 runDiagnostics <- FALSE
-instantiateTreatmentCohorts <- FALSE
 runPatternAnalysis <- TRUE
 
 ### Do not edit below here

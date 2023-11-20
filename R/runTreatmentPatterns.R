@@ -5,7 +5,7 @@
 #' @param cohortDatabaseSchema  A writable location on the database.
 #' @param cohortTable Name of the main cohort table in characters.  
 #' @param cohortsGenerated A table contianing the output of the createCohorts function, detailing the cohorts that have been instatiated
-#' @param outputFolder The output directory where the results should be saved
+#' @param outputSubDir The output directory where the results should be saved
 #' @param tablePrefix table prefix
 #' @param logger logger object
 #' @param cohortIds the cohortIds to be used form the cohort table
@@ -21,7 +21,7 @@ runTreatmentPatterns <- function(connectionDetails,
                                  cohortDatabaseSchema,
                                  cohortTable,
                                  cohortsGenerated,
-                                 outputFolder,
+                                 outputSubDir,
                                  tablePrefix = NULL,
                                  logger = NULL,
                                  cohortIds,
@@ -46,7 +46,7 @@ runTreatmentPatterns <- function(connectionDetails,
     pathways <- TreatmentPatterns::executeTreatmentPatterns(
       cohorts = cohorts,
       cohortTableName = cohortTable,
-      outputPath = outputFolder,
+      outputPath = outputSubDir,
       connectionDetails = connectionDetails,
       cdmSchema = cdmDatabaseSchema,
       resultSchema = cohortDatabaseSchema,
@@ -67,7 +67,7 @@ runTreatmentPatterns <- function(connectionDetails,
     #export results
     TreatmentPatterns::export(
         andromeda = pathways,
-        outputPath = here::here(outputFolder),
+        outputPath = outputSubDir,
         ageWindow = c(2,6,11,17,65,150), 
         minFreq = minCellCount,
         archiveName = NULL
