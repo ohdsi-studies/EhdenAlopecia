@@ -15,6 +15,9 @@ Imports:
     readr,
     here,
     TreatmentPatterns,
+    CohortDiagnostics,
+    CirceR,
+    CohortGenerator
 Suggests: 
     testthat (>= 3.0.0),
     rmarkdown,
