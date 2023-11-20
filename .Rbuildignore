@@ -4,3 +4,7 @@
 ^\.Rproj\.user$
 ^CodeToRunSynthea\.R
 ^CodeToRunIPCI\.R
+^results$
+^errorReportSql\.txt$
+^badgesMarkdownCode\.md$
+^LICENSE\.md$

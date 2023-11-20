@@ -60,35 +60,3 @@ createCohorts <- function(connectionDetails,
                                                  cohortTable = cohortTableNames$cohortTable)
   return(cohortsGenerated)
 }
-
-#' Instantiate cohorts against an omop cdm instance
-#'
-#' @param connectionDetails connection details generated using DatabaseConnector::createConnectionDetails()
-#' @param cohortTable Name of the table to be created where cohorts will be stored
-#' @param type Which cohorts to create
-#' @param cdmDatabaseSchema name of the schema where the cdm is stored
-#' @param cohortDatabaseSchema name of a schema with write access for the creation of cohort table
-#'
-#' @export
-createCohortsCDM <- function(cdm, 
-                             cohortTable,
-                             type = c("cohorts"),
-                             cdmDatabaseSchema, 
-                             cohortDatabaseSchema){
-  
-  alopecia_ehden <- CDMConnector::readCohortSet(system.file("cohorts", package = "EhdenAlopecia")) 
-  
-  cdm <- CDMConnector::generateCohortSet(cdm,
-                                         alopecia_ehden,
-                                         name = "alopecia_ehden",
-                                         computeAttrition = TRUE,
-                                         overwrite = TRUE)
-  
-
-  
-  # Get the cohort counts
-  cohortCounts <- CohortGenerator::getCohortCounts(connectionDetails = connectionDetails,
-                                                   cohortDatabaseSchema = cohortDatabaseSchema,
-                                                   cohortTable = cohortTableNames$cohortTable)
-  return(cohortsGenerated)
-}

@@ -1,12 +1,12 @@
 #' Run the treatment patterns analysis
-#'
-#' @param connection An database connection created using DatabaseConnector::connect
-#' @param cdmDatabaseSchema the schema where the cdm is located
-#' @param cohortDatabaseSchema  A writable location on the database. 
+#' 
+#' @param connectionDetails DatabaseConnector connection details.
+#' @param cdmDatabaseSchema the schema where the cdm is located.
+#' @param cohortDatabaseSchema  A writable location on the database.
+#' @param cohortTable Name of the main cohort table in characters.  
 #' @param cohortsGenerated A table contianing the output of the createCohorts function, detailing the cohorts that have been instatiated
 #' @param outputFolder The output directory where the results should be saved
 #' @param tablePrefix table prefix
-#' @param outcomeTableName outcome cohort table name
 #' @param logger logger object
 #' @param cohortIds the cohortIds to be used form the cohort table
 #' @param minCellCount minimum cell count

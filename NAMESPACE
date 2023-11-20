@@ -2,7 +2,6 @@
 
 export("%>%")
 export(createCohorts)
-export(createCohortsCDM)
 export(runStudy)
 export(runTreatmentPatterns)
 import(TreatmentPatterns)

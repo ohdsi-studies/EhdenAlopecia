@@ -18,9 +18,13 @@ runTreatmentPatterns(
 )
 }
 \arguments{
-\item{cdmDatabaseSchema}{the schema where the cdm is located}
+\item{connectionDetails}{DatabaseConnector connection details.}
+
+\item{cdmDatabaseSchema}{the schema where the cdm is located.}
 
 \item{cohortDatabaseSchema}{A writable location on the database.}
+
+\item{cohortTable}{Name of the main cohort table in characters.}
 
 \item{cohortsGenerated}{A table contianing the output of the createCohorts function, detailing the cohorts that have been instatiated}
 
@@ -33,10 +37,6 @@ runTreatmentPatterns(
 \item{cohortIds}{the cohortIds to be used form the cohort table}
 
 \item{minCellCount}{minimum cell count}
-
-\item{connection}{An database connection created using DatabaseConnector::connect}
-
-\item{outcomeTableName}{outcome cohort table name}
 }
 \value{
 the drug utilisation results
