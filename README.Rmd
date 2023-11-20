@@ -104,7 +104,7 @@ dbms <- Sys.getenv("dbms")
 user <- Sys.getenv("user")
 password <- Sys.getenv("password")
 server <- Sys.getenv("host")
-port <- Sys.getenv
+port <- Sys.getenv("port")
 connectionString <- Sys.getenv("connectionString")
 
 connectionDetails <- DatabaseConnector::createConnectionDetails(dbms = dbms,

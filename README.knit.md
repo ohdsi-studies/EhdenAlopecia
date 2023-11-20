@@ -1,22 +1,25 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
 
 # EHDEN Alopecia
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml)
 <img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started">
 <!-- badges: end -->
 
-Analytic software to perform large-scale distributed analysis of
-patients with Alopecia as part of the EHDEN study-athon.
+Analytic software to perform large-scale distributed analysis of patients with Alopecia as part of the EHDEN study-athon.
 
 - Analytics use case(s): Population-Level Estimation
 - Study type: Clinical Application
 - Tags: -
-- Study lead:
-- Study lead forums tag:
+- Study lead: 
+- Study lead forums tag: 
 - Study start date: 1 November 2023
 - Study end date: -
 - Protocol: To be added
@@ -25,22 +28,21 @@ patients with Alopecia as part of the EHDEN study-athon.
 
 # Requirements
 
-A database in Common Data Model version 5 in one of these platforms: SQL
-Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift,
-Google BigQuery, or Microsoft APS. R version 4.0.5 On Windows: RTools
-Java 100 GB of free disk space
+A database in Common Data Model version 5 in one of these platforms: SQL Server, Oracle, PostgreSQL, IBM Netezza, Apache Impala, Amazon RedShift, Google BigQuery, or Microsoft APS.
+R version 4.0.5
+On Windows: RTools
+Java
+100 GB of free disk space
 
 # How to run
 
-1.  See the instructions at <https://ohdsi.github.io/Hades/rSetup.html>
-    for configuring your R environment, including Java and RStudio.
+1. See the instructions at https://ohdsi.github.io/Hades/rSetup.html for configuring your R environment, including Java and RStudio.
 
-2.  Clone the EhdenAlopecia package into your local R environment.
+2. Clone the EhdenAlopecia package into your local R environment.
 
-3.  Open your study package in RStudio. Use the following code to
-    install all the dependencies:
+3. Open your study package in RStudio. Use the following code to install all the dependencies:
 
-``` r
+```R
 
 install.packages(c("TreatmentPatterns", 
                    "DBI",
@@ -71,13 +73,11 @@ remotes::install_github(c("ohdsi/CirceR",
                           
 ```
 
-In RStudio, select ‘Build’ then ‘Install and Restart’ to install the
-package.
+In RStudio, select 'Build' then 'Install and Restart' to install the  package.
 
-After succesfully installing the package. Open the extras/CodeTorun.R
-and run the following code:
+After succesfully installing the package. Open the extras/CodeTorun.R and run the following code:
 
-``` r
+```R
 #Load the library
 
 library(EhdenAlopecia)
@@ -143,4 +143,5 @@ EhdenAlopecia::runStudy(
   databaseId = databaseId,
   minCellCount = minCellCount
 )
+
 ```
