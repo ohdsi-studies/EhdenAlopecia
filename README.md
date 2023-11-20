@@ -5,11 +5,11 @@
 
 <!-- badges: start -->
 
-\[![R-CMD-check](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml/badge.svg)
+[![R-CMD-check](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 Analytic software to perform large-scale distributed analysis of
-patients with Alopecia as part of the EHDEN study-athon
+patients with Alopecia as part of the EHDEN study-athon.
 
 <img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started">
 
