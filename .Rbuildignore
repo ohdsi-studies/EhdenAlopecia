@@ -8,3 +8,5 @@
 ^errorReportSql\.txt$
 ^badgesMarkdownCode\.md$
 ^LICENSE\.md$
+^\.github$
+^README\.Rmd$
