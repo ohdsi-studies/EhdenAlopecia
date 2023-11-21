@@ -70,7 +70,7 @@ runStudy <- function(connectionDetails,
     targetCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>% 
       filter(cohortId <= 100)
     eventCohorts <- readr::read_csv(file.path(outputFolder, "cohortsGenerated.csv")) %>%
-      filter(between(cohortId, 100, 114))
+      filter(between(cohortId, 101, 114))
     for (i in seq(1:length(targetCohorts$cohortId))) {
       outputSubDir <- file.path(outputFolder, 'treatmentPatterns', targetCohorts[i,]$cohortId)
       if (!dir.exists(outputSubDir)) {
