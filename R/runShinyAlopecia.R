@@ -58,6 +58,15 @@ runShinyAlopecia <- function(resultsFolder = here::here("results")) {
                    targetCohort = targetCohortNumber[v]))
         }
       }
+      cohortNames <- read_csv(system.file("cohortDefinitionSet.csv", package = "EhdenAlopecia"), 
+                              show_col_types = FALSE,
+                              col_names = TRUE)
+      
+      resultsPathways <- resultsPathways %>%
+        mutate(path = ifelse(path %in% cohortNames$cohortId, cohortNames$cohortName[match(path, cohortNames$cohortId)], path),
+               targetCohort = ifelse(targetCohort %in% cohortNames$cohortId, cohortNames$cohortName[match(targetCohort, cohortNames$cohortId)], targetCohort))
+      
+      
       return(resultsPathways)
     })
     
