@@ -3,7 +3,7 @@
 #' @import shiny shinythemes shinydashboard shinycssloaders shinyWidgets TreatmentPatterns here
 #' @importFrom readr read_csv
 #' @export
-runShinyAlopecia <- function() {
+runShinyAlopecia <- function(resultsFolder = here::here("results")) {
   ui <- dashboardPage(
     dashboardHeader(title = "Menu"),
     dashboardSidebar(
@@ -35,7 +35,7 @@ runShinyAlopecia <- function() {
   server <- function(input, output, session) {
     ## TreatmentPatterns ----
     resultsPathways <- reactive({
-      databases <- list.files(here::here("results"), full.names = TRUE)
+      databases <- list.files(resultsFolder, full.names = TRUE)
       resultsPathways <- list()
       for (i in seq(1:length(databases))) {
         # i <- 1
