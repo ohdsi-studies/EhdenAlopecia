@@ -21,8 +21,10 @@ Imports:
     shinythemes,
     shinydashboard,
     shinycssloaders,
-    shinyWidgets
-    here
+    shinyWidgets,
+    here,
+    DT,
+    stringr
 Suggests: 
     testthat (>= 3.0.0),
     rmarkdown,

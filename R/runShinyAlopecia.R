@@ -1,7 +1,12 @@
 #' `runAlopeciaShiny()` launches an app to visualise TreatmentPatterns results for the alopecia study.
 #' 
-#' @import shiny shinythemes shinydashboard shinycssloaders shinyWidgets TreatmentPatterns here
+#' @param resultsFolder Define the results folder path in character.
+#' 
+#' @import shinythemes shinydashboard shinycssloaders shinyWidgets TreatmentPatterns here
 #' @importFrom readr read_csv
+#' @importFrom DT dataTableOutput renderDataTable
+#' @importFrom stringr str_detect
+#' @importFrom shiny shinyApp h4 uiOutput
 #' @export
 runShinyAlopecia <- function(resultsFolder = here::here("results")) {
   ui <- dashboardPage(
