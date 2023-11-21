@@ -22,7 +22,7 @@ Imports:
     shinydashboard,
     shinycssloaders,
     shinyWidgets
-    here,
+    here
 Suggests: 
     testthat (>= 3.0.0),
     rmarkdown,
