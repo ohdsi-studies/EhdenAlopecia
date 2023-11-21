@@ -22,9 +22,9 @@ Imports:
     shinydashboard,
     shinycssloaders,
     shinyWidgets
+    here,
 Suggests: 
     testthat (>= 3.0.0),
-    here,
     rmarkdown,
     checkmate,
     SqlRender,
