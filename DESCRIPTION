@@ -13,14 +13,18 @@ Imports:
     dplyr,
     magrittr,
     readr,
-    TreatmentPatterns (>= 2.6.0),
+    TreatmentPatterns (>= 2.5.2),
     CohortDiagnostics,
     CirceR,
     CohortGenerator,
-    Here
+    shiny,
+    shinythemes,
+    shinydashboard,
+    shinycssloaders,
+    shinyWidgets
+    here,
 Suggests: 
     testthat (>= 3.0.0),
-    here,
     rmarkdown,
     checkmate,
     SqlRender,
