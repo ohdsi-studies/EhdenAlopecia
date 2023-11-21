@@ -16,7 +16,8 @@ Imports:
     TreatmentPatterns (>= 2.6.0),
     CohortDiagnostics,
     CirceR,
-    CohortGenerator
+    CohortGenerator,
+    Here
 Suggests: 
     testthat (>= 3.0.0),
     here,
