@@ -1,19 +1,10 @@
+EHDEN Alopecia
+==============
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# EHDEN Alopecia
-
-<!-- badges: start -->
-
-[![R-CMD-check](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ohdsi-studies/EhdenAlopecia/actions/workflows/R-CMD-check.yaml)
 <img src="https://img.shields.io/badge/Study%20Status-Started-blue.svg" alt="Study Status: Started">
-<!-- badges: end -->
 
-Analytic software to perform large-scale distributed analysis of
-patients with Alopecia as part of the EHDEN study-athon.
-
-- Analytics use case(s): Population-Level Estimation
-- Study type: Clinical Application
+- Analytics use case(s): **Population-Level Estimation**
+- Study type: **Clinical Application**
 - Tags: -
 - Study lead:
 - Study lead forums tag:
@@ -22,6 +13,9 @@ patients with Alopecia as part of the EHDEN study-athon.
 - Protocol: To be added
 - Publications: -
 - Results explorer: -
+
+Analytic software to perform large-scale distributed analysis of
+patients with Alopecia as part of the EHDEN study-athon.
 
 # Requirements
 
